@@ -11,6 +11,11 @@
 		954CDF112541E02300969C0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CDF102541E02300969C0A /* ContentView.swift */; };
 		954CDF132541E02800969C0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954CDF122541E02800969C0A /* Assets.xcassets */; };
 		954CDF162541E02800969C0A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954CDF152541E02800969C0A /* Preview Assets.xcassets */; };
+		954CDF422541F6A700969C0A /* TotalStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CDF412541F6A700969C0A /* TotalStatsVC.swift */; };
+		954CDF452541F6D000969C0A /* MapStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CDF442541F6D000969C0A /* MapStatsVC.swift */; };
+		95BB427325421BD800EAFA87 /* CurvedSideRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB427225421BD800EAFA87 /* CurvedSideRectangle.swift */; };
+		95BB4277254224A300EAFA87 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB4276254224A300EAFA87 /* HeaderView.swift */; };
+		95BB427B25422C8B00EAFA87 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB427A25422C8B00EAFA87 /* StatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,11 @@
 		954CDF122541E02800969C0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		954CDF152541E02800969C0A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		954CDF172541E02800969C0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		954CDF412541F6A700969C0A /* TotalStatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalStatsVC.swift; sourceTree = "<group>"; };
+		954CDF442541F6D000969C0A /* MapStatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStatsVC.swift; sourceTree = "<group>"; };
+		95BB427225421BD800EAFA87 /* CurvedSideRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedSideRectangle.swift; sourceTree = "<group>"; };
+		95BB4276254224A300EAFA87 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		95BB427A25422C8B00EAFA87 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +62,11 @@
 		954CDF0D2541E02300969C0A /* OKCovid SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				954CDF0E2541E02300969C0A /* OKCovid_SwiftUIApp.swift */,
-				954CDF102541E02300969C0A /* ContentView.swift */,
-				954CDF122541E02800969C0A /* Assets.xcassets */,
+				95BB426C25421B7300EAFA87 /* Helpers */,
+				954CDF3D2541F4E300969C0A /* Model */,
+				954CDF3C2541F4DD00969C0A /* View */,
+				954CDF3B2541F4D700969C0A /* Controller */,
+				954CDF372541F43000969C0A /* Support */,
 				954CDF172541E02800969C0A /* Info.plist */,
 				954CDF142541E02800969C0A /* Preview Content */,
 			);
@@ -67,6 +79,49 @@
 				954CDF152541E02800969C0A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		954CDF372541F43000969C0A /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				954CDF0E2541E02300969C0A /* OKCovid_SwiftUIApp.swift */,
+				954CDF102541E02300969C0A /* ContentView.swift */,
+				954CDF122541E02800969C0A /* Assets.xcassets */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		954CDF3B2541F4D700969C0A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				954CDF412541F6A700969C0A /* TotalStatsVC.swift */,
+				954CDF442541F6D000969C0A /* MapStatsVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		954CDF3C2541F4DD00969C0A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95BB4276254224A300EAFA87 /* HeaderView.swift */,
+				95BB427A25422C8B00EAFA87 /* StatView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		954CDF3D2541F4E300969C0A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		95BB426C25421B7300EAFA87 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				95BB427225421BD800EAFA87 /* CurvedSideRectangle.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +193,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				954CDF422541F6A700969C0A /* TotalStatsVC.swift in Sources */,
+				95BB427B25422C8B00EAFA87 /* StatView.swift in Sources */,
+				95BB4277254224A300EAFA87 /* HeaderView.swift in Sources */,
+				95BB427325421BD800EAFA87 /* CurvedSideRectangle.swift in Sources */,
+				954CDF452541F6D000969C0A /* MapStatsVC.swift in Sources */,
 				954CDF112541E02300969C0A /* ContentView.swift in Sources */,
 				954CDF0F2541E02300969C0A /* OKCovid_SwiftUIApp.swift in Sources */,
 			);
