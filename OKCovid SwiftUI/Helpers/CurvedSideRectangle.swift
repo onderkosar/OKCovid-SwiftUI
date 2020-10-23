@@ -13,9 +13,9 @@ struct CurvedSideRectangle: Shape {
         
         path.move(to: CGPoint.zero)
         path.addLine(to: CGPoint(x: rect.maxX, y: 0))
-        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
-        path.addQuadCurve(to: CGPoint(x: 0, y: rect.maxY),
-                          control: CGPoint(x: rect.minX + 320, y: rect.maxY + 60))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY + 50))
+        path.addQuadCurve(to: CGPoint(x: 0, y: rect.maxY + 5),
+                          control: CGPoint(x: rect.minX + 300, y: rect.maxY + 10))
         path.closeSubpath()
         
         return path

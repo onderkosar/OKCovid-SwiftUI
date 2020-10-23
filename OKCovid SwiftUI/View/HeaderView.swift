@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HeaderView: View {
+    var worldModel: WorldModel
+        
     var body: some View {
         VStack() {
             Text("WORLD STATS")
@@ -23,22 +25,22 @@ struct HeaderView: View {
                 
                 VStack(alignment: .center, spacing: 20) {
                     HStack() {
-                        StatView(title: "Cases", subTitle: "41.878.121")
+                        StatView(title: "Cases", subTitle: "\(worldModel.cases.numberFormat())")
                         .padding(.leading, 5)
                 
                         Spacer()
                         
-                        StatView(title: "Deaths", subTitle: "1.140.701")
+                        StatView(title: "Deaths", subTitle: "\(worldModel.deaths.numberFormat())")
                         .padding(.trailing, 5)
                     }
                     
                     HStack() {
-                        StatView(title: "Active", subTitle: "10.777.854")
+                        StatView(title: "Active", subTitle: "\(worldModel.active.numberFormat())")
                         .padding(.leading, 5)
                         
                         Spacer()
                         
-                        StatView(title: "Recovered", subTitle: "31.100.267")
+                        StatView(title: "Recovered", subTitle: "\(worldModel.recovered.numberFormat())")
                         .padding(.trailing, 5)
                     }
                     
@@ -46,13 +48,12 @@ struct HeaderView: View {
                 .padding(.top, 5)
             }
         }
-
     }
 }
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView()
+        HeaderView(worldModel: WorldModel(population: 0, updated: 0, cases: 0, active: 0, deaths: 0, recovered: 0))
             .previewLayout(.sizeThatFits)
             .preferredColorScheme(.dark)
     }
