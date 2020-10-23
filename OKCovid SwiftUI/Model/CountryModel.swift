@@ -10,7 +10,6 @@ import Foundation
 struct CountryModel: Codable, Hashable {
     let country : String
 //    let countryInfo : CountryInfoModel!
-    
     let population : Int
     let updated : Int
     let tests : Int
