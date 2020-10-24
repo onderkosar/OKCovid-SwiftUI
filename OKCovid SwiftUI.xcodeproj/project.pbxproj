@@ -25,6 +25,7 @@
 		95C7E62B2544498F008E9459 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7E62A2544498F008E9459 /* MapView.swift */; };
 		95ED4F4C25448105002C8D9D /* MapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ED4F4B25448105002C8D9D /* MapAnnotationView.swift */; };
 		95ED4F4F2544A67D002C8D9D /* CountryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ED4F4E2544A67D002C8D9D /* CountryListVC.swift */; };
+		95ED4F522544D07A002C8D9D /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ED4F512544D07A002C8D9D /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		95C7E62A2544498F008E9459 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		95ED4F4B25448105002C8D9D /* MapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationView.swift; sourceTree = "<group>"; };
 		95ED4F4E2544A67D002C8D9D /* CountryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListVC.swift; sourceTree = "<group>"; };
+		95ED4F512544D07A002C8D9D /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				950FF2022542F485002323FD /* CountryView.swift */,
 				95C7E62A2544498F008E9459 /* MapView.swift */,
 				95ED4F4B25448105002C8D9D /* MapAnnotationView.swift */,
+				95ED4F512544D07A002C8D9D /* SearchBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				954CDF112541E02300969C0A /* ContentView.swift in Sources */,
 				954CDF0F2541E02300969C0A /* OKCovid_SwiftUIApp.swift in Sources */,
 				950FF20D25430446002323FD /* DataType+Ext.swift in Sources */,
+				95ED4F522544D07A002C8D9D /* SearchBar.swift in Sources */,
 				950FF2032542F485002323FD /* CountryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

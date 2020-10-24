@@ -10,12 +10,13 @@ import SwiftUI
 struct CountryListVC: View {
     @State var countries    = [CountryModel]()
     @State var searchText   = ""
+    @State var isSearching  = false
     
     var body: some View {
         NavigationView {
             VStack {
-                TextField("Search countries...", text: $searchText)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                SearchBar(searchText: $searchText, isSearching: $isSearching)
+                    .padding(.top, 8)
                 if searchText.isEmpty {
                     List(countries, id: \.country) { item in
                         VStack(alignment: .leading) {
@@ -60,6 +61,10 @@ struct CountryListVC: View {
 
 struct CountryListVC_Previews: PreviewProvider {
     static var previews: some View {
-        CountryListVC()
+        HStack {
+            CountryListVC()
+            CountryListVC()
+                .colorScheme(.dark)
+        }.previewLayout(.fixed(width: 800, height: 400))
     }
 }
