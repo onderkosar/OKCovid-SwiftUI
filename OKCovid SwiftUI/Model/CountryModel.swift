@@ -9,7 +9,7 @@ import Foundation
 
 struct CountryModel: Codable, Hashable {
     let country : String
-//    let countryInfo : CountryInfoModel!
+    let countryInfo : CountryInfo
     let population : Int
     let updated : Int
     let tests : Int
@@ -19,11 +19,11 @@ struct CountryModel: Codable, Hashable {
     let recovered : Int
 }
 
-struct CountryInfoModel: Codable, Hashable {
-    let id : Int
+struct CountryInfo: Codable, Hashable {
+    let _id : Double
     let flag : String
     let iso2 : String
     let iso3 : String
-    let lat : Int
-    let longField : Int
+    let lat : Double
+    let long: Double
 }

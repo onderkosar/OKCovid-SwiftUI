@@ -60,7 +60,7 @@ struct CountryView: View {
 
 struct CountryView_Previews: PreviewProvider {
     static var previews: some View {
-        CountryView(countryModel: CountryModel(country: "N/A", population: 0, updated: 0, tests: 0, cases: 0, active: 0, deaths: 0, recovered: 0), countryIso: "N/A")
+        CountryView(countryModel: CountryModel(country: "", countryInfo: CountryInfo(_id: 0, flag: "", iso2: "", iso3: "", lat: 0, long: 0), population: 0, updated: 0, tests: 0, cases: 0, active: 0, deaths: 0, recovered: 0), countryIso: "N/A")
             .previewLayout(.sizeThatFits)
     }
 }

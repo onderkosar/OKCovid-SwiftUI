@@ -27,7 +27,7 @@ struct TotalStatsVC: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .top, spacing: 15) {
                         ForEach(0 ..< countriesModel.count) { item in
-                            CountryView(countryModel: countriesModel[item], countryIso: countries[item])
+                            CountryView(countryModel: countriesModel[item], countryIso: countriesModel[item].country.lowercased())
                                 .cornerRadius(13)
                         }
                     }
