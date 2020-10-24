@@ -20,6 +20,11 @@ struct ContentView: View {
                     Image(systemName: "map.fill")
                     Text("Map")
                 })
+            CountryListVC()
+                .tabItem({
+                    Image(systemName: "list.dash")
+                    Text("Countries")
+                })
         } //: TABVIEW
         .edgesIgnoringSafeArea(.top)
         .accentColor(Color.primary)

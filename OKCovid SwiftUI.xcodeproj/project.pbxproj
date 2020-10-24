@@ -24,6 +24,7 @@
 		95BB427B25422C8B00EAFA87 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB427A25422C8B00EAFA87 /* StatView.swift */; };
 		95C7E62B2544498F008E9459 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7E62A2544498F008E9459 /* MapView.swift */; };
 		95ED4F4C25448105002C8D9D /* MapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ED4F4B25448105002C8D9D /* MapAnnotationView.swift */; };
+		95ED4F4F2544A67D002C8D9D /* CountryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ED4F4E2544A67D002C8D9D /* CountryListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		95BB427A25422C8B00EAFA87 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 		95C7E62A2544498F008E9459 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		95ED4F4B25448105002C8D9D /* MapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationView.swift; sourceTree = "<group>"; };
+		95ED4F4E2544A67D002C8D9D /* CountryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				954CDF412541F6A700969C0A /* TotalStatsVC.swift */,
 				954CDF442541F6D000969C0A /* MapStatsVC.swift */,
+				95ED4F4E2544A67D002C8D9D /* CountryListVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				950FF1F82542E4CD002323FD /* CountryModel.swift in Sources */,
 				950FF1FE2542E715002323FD /* TimelineModel.swift in Sources */,
 				95BB4277254224A300EAFA87 /* HeaderView.swift in Sources */,
+				95ED4F4F2544A67D002C8D9D /* CountryListVC.swift in Sources */,
 				95BB427325421BD800EAFA87 /* CurvedSideRectangle.swift in Sources */,
 				95C7E62B2544498F008E9459 /* MapView.swift in Sources */,
 				950FF1F52542E210002323FD /* WorldModel.swift in Sources */,
