@@ -21,20 +21,21 @@ struct CountryModel: Codable, Hashable {
 }
 
 struct CountryInfo: Codable, Hashable {
-    let _id : Double
-    let flag : String
-    let iso2 : String
-    let iso3 : String
-    let lat : Double
-    let long: Double
+    let _id : Double?
+    let flag : String?
+    let iso2 : String?
+    let iso3 : String?
+    let lat : Double?
+    let long: Double?
     
-    var location: CLLocationCoordinate2D {
-        CLLocationCoordinate2D(latitude: lat, longitude: long)
+    var location: CLLocationCoordinate2D? {
+        CLLocationCoordinate2D(latitude: lat ?? 0, longitude: long ?? 0)
     }
 }
 
 struct CountryLocation: Codable, Identifiable {
     var id = UUID()
+    var country: String
     var latitude: Double
     var longitude: Double
     

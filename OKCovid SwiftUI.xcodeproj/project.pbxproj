@@ -23,6 +23,7 @@
 		95BB4277254224A300EAFA87 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB4276254224A300EAFA87 /* HeaderView.swift */; };
 		95BB427B25422C8B00EAFA87 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB427A25422C8B00EAFA87 /* StatView.swift */; };
 		95C7E62B2544498F008E9459 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7E62A2544498F008E9459 /* MapView.swift */; };
+		95ED4F4C25448105002C8D9D /* MapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ED4F4B25448105002C8D9D /* MapAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		95BB4276254224A300EAFA87 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		95BB427A25422C8B00EAFA87 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 		95C7E62A2544498F008E9459 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		95ED4F4B25448105002C8D9D /* MapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				95BB427A25422C8B00EAFA87 /* StatView.swift */,
 				950FF2022542F485002323FD /* CountryView.swift */,
 				95C7E62A2544498F008E9459 /* MapView.swift */,
+				95ED4F4B25448105002C8D9D /* MapAnnotationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95ED4F4C25448105002C8D9D /* MapAnnotationView.swift in Sources */,
 				950FF208254303F6002323FD /* NetworkManager.swift in Sources */,
 				954CDF422541F6A700969C0A /* TotalStatsVC.swift in Sources */,
 				95BB427B25422C8B00EAFA87 /* StatView.swift in Sources */,

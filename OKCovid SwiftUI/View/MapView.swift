@@ -24,18 +24,24 @@ struct MapView: View {
     
     var body: some View {
         Map(coordinateRegion: $region, annotationItems: locations, annotationContent: { item in
-            MapPin(coordinate: item.location, tint: Color.red)
+            MapAnnotation(coordinate: item.location) {
+                MapAnnotationView(location: item, countryName: item.country.lowercased())
+            }
         })
         .onAppear(perform: {
             getData()
         })
     }
     
-    func getData() {        
-        for item in countries {
-            NetworkManager.shared.fetch(for: item, ifDaily: false) { (result: CountryModel) in
-                DispatchQueue.main.async {
-                    locations.append(CountryLocation(latitude: result.countryInfo.lat, longitude: result.countryInfo.long))
+    func getData() {
+        NetworkManager.shared.fetch(for: "", ifDaily: false) { (result: [CountryModel]) in
+            DispatchQueue.main.async {
+                self.countriesModel = result
+                
+                for item in countriesModel {
+                    if item.cases > 500 {
+                        locations.append(CountryLocation(country: item.country, latitude: item.countryInfo.lat ?? 0, longitude: item.countryInfo.long ?? 0))
+                    }
                 }
             }
         }
