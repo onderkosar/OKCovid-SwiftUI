@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MapStatsVC: View {
     var body: some View {
-        Text("Map Stats View Controler")
+        MapView()
     }
 }
 

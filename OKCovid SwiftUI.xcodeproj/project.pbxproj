@@ -22,6 +22,7 @@
 		95BB427325421BD800EAFA87 /* CurvedSideRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB427225421BD800EAFA87 /* CurvedSideRectangle.swift */; };
 		95BB4277254224A300EAFA87 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB4276254224A300EAFA87 /* HeaderView.swift */; };
 		95BB427B25422C8B00EAFA87 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB427A25422C8B00EAFA87 /* StatView.swift */; };
+		95C7E62B2544498F008E9459 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7E62A2544498F008E9459 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		95BB427225421BD800EAFA87 /* CurvedSideRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedSideRectangle.swift; sourceTree = "<group>"; };
 		95BB4276254224A300EAFA87 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		95BB427A25422C8B00EAFA87 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
+		95C7E62A2544498F008E9459 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				95BB4276254224A300EAFA87 /* HeaderView.swift */,
 				95BB427A25422C8B00EAFA87 /* StatView.swift */,
 				950FF2022542F485002323FD /* CountryView.swift */,
+				95C7E62A2544498F008E9459 /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				950FF1FE2542E715002323FD /* TimelineModel.swift in Sources */,
 				95BB4277254224A300EAFA87 /* HeaderView.swift in Sources */,
 				95BB427325421BD800EAFA87 /* CurvedSideRectangle.swift in Sources */,
+				95C7E62B2544498F008E9459 /* MapView.swift in Sources */,
 				950FF1F52542E210002323FD /* WorldModel.swift in Sources */,
 				954CDF452541F6D000969C0A /* MapStatsVC.swift in Sources */,
 				954CDF112541E02300969C0A /* ContentView.swift in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 
 struct CountryModel: Codable, Hashable {
     let country : String
@@ -26,4 +27,19 @@ struct CountryInfo: Codable, Hashable {
     let iso3 : String
     let lat : Double
     let long: Double
+    
+    var location: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: lat, longitude: long)
+    }
+}
+
+struct CountryLocation: Codable, Identifiable {
+    var id = UUID()
+    var latitude: Double
+    var longitude: Double
+    
+    // Computed Property
+    var location: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
 }
