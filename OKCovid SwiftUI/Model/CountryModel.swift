@@ -33,11 +33,13 @@ struct CountryInfo: Codable, Hashable {
     }
 }
 
-struct CountryLocation: Codable, Identifiable {
+struct AnotationModel: Codable, Identifiable {
     var id = UUID()
-    var country: String
+    var name: String
     var latitude: Double
     var longitude: Double
+    var cases: Int
+    var deaths: Int
     
     // Computed Property
     var location: CLLocationCoordinate2D {

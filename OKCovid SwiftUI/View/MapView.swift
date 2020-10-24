@@ -19,13 +19,13 @@ struct MapView: View {
         return mapRegion
     }()
     
-    @State private var countriesModel: [CountryModel]   = []
-    @State private var locations: [CountryLocation]     = []
+    @State private var countriesModel: [CountryModel]       = []
+    @State private var anotationsModel: [AnotationModel]    = []
     
     var body: some View {
-        Map(coordinateRegion: $region, annotationItems: locations, annotationContent: { item in
-            MapAnnotation(coordinate: item.location) {
-                MapAnnotationView(location: item, countryName: item.country.lowercased())
+        Map(coordinateRegion: $region, annotationItems: anotationsModel, annotationContent: { country in
+            MapAnnotation(coordinate: country.location) {
+                MapAnnotationView(countryName: country.name.lowercased(), cases: country.cases, deaths: country.deaths)
             }
         })
         .onAppear(perform: {
@@ -39,8 +39,8 @@ struct MapView: View {
                 self.countriesModel = result
                 
                 for item in countriesModel {
-                    if item.cases > 500 {
-                        locations.append(CountryLocation(country: item.country, latitude: item.countryInfo.lat ?? 0, longitude: item.countryInfo.long ?? 0))
+                    if item.cases > 1000 {
+                        anotationsModel.append(AnotationModel(name: item.country, latitude: item.countryInfo.lat ?? 0, longitude: item.countryInfo.long ?? 0, cases: item.cases, deaths: item.deaths))
                     }
                 }
             }
