@@ -13,18 +13,15 @@ struct CountryListVC: View {
     @State var isSearching  = false
     
     var body: some View {
-        NavigationView {
+        VStack {
+            SearchBar(searchText: $searchText, isSearching: $isSearching)
+                .padding(.bottom, 30)
             VStack {
-                SearchBar(searchText: $searchText, isSearching: $isSearching)
-                    .padding(.top, 8)
+                ListCell(textOne: "CountryName", textTwo: "Cases", textThree: "Deaths", fontSize: 16, fontWeight: .bold, frameWidth: 130)
+                .padding(.horizontal)
                 if searchText.isEmpty {
                     List(countries, id: \.country) { item in
-                        VStack(alignment: .leading) {
-                            Text(item.country)
-                                .font(.headline)
-                            Text("\(item.cases)")
-                                .font(.footnote)
-                        }
+                        ListCell(textOne: item.country, textTwo: "\(item.cases)", textThree: "\(item.deaths)", fontSize: 12, fontWeight: .medium, frameWidth: 130)
                     }
                     .onAppear(perform: {
                         getData()
@@ -33,21 +30,14 @@ struct CountryListVC: View {
                     List(countries.filter {
                         $0.country.lowercased().contains(searchText.lowercased())
                     }, id: \.country) { item in
-                        VStack(alignment: .leading) {
-                            Text(item.country)
-                                .font(.headline)
-                            Text("\(item.cases)")
-                                .font(.footnote)
-                        }
+                        ListCell(textOne: item.country, textTwo: "\(item.cases)", textThree: "\(item.deaths)", fontSize: 12, fontWeight: .medium, frameWidth: 130)
                     }
                     .onAppear(perform: {
                         getData()
                     })
                 }
             }
-            .navigationBarTitle("Countries", displayMode: .inline)
         }
-        .navigationBarTitle("Countries")
     }
     
     func getData() {
@@ -61,10 +51,11 @@ struct CountryListVC: View {
 
 struct CountryListVC_Previews: PreviewProvider {
     static var previews: some View {
-        HStack {
-            CountryListVC()
-            CountryListVC()
-                .colorScheme(.dark)
-        }.previewLayout(.fixed(width: 800, height: 400))
+        CountryListVC()
+//        HStack {
+//            CountryListVC()
+//            CountryListVC()
+//                .colorScheme(.dark)
+//        }.previewLayout(.fixed(width: 800, height: 400))
     }
 }
