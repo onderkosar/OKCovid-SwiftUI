@@ -20,6 +20,7 @@
 		954CDF422541F6A700969C0A /* TotalStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CDF412541F6A700969C0A /* TotalStatsVC.swift */; };
 		954CDF452541F6D000969C0A /* MapStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CDF442541F6D000969C0A /* MapStatsVC.swift */; };
 		956C2F04254595B7004BEC41 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C2F03254595B7004BEC41 /* ListCell.swift */; };
+		956C2F0725459A67004BEC41 /* DailyStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C2F0625459A67004BEC41 /* DailyStatsVC.swift */; };
 		95BB427325421BD800EAFA87 /* CurvedSideRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB427225421BD800EAFA87 /* CurvedSideRectangle.swift */; };
 		95BB4277254224A300EAFA87 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB4276254224A300EAFA87 /* HeaderView.swift */; };
 		95BB427B25422C8B00EAFA87 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB427A25422C8B00EAFA87 /* StatView.swift */; };
@@ -45,6 +46,7 @@
 		954CDF412541F6A700969C0A /* TotalStatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalStatsVC.swift; sourceTree = "<group>"; };
 		954CDF442541F6D000969C0A /* MapStatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStatsVC.swift; sourceTree = "<group>"; };
 		956C2F03254595B7004BEC41 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		956C2F0625459A67004BEC41 /* DailyStatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStatsVC.swift; sourceTree = "<group>"; };
 		95BB427225421BD800EAFA87 /* CurvedSideRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedSideRectangle.swift; sourceTree = "<group>"; };
 		95BB4276254224A300EAFA87 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		95BB427A25422C8B00EAFA87 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				954CDF412541F6A700969C0A /* TotalStatsVC.swift */,
 				954CDF442541F6D000969C0A /* MapStatsVC.swift */,
 				95ED4F4E2544A67D002C8D9D /* CountryListVC.swift */,
+				956C2F0625459A67004BEC41 /* DailyStatsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				95ED4F4F2544A67D002C8D9D /* CountryListVC.swift in Sources */,
 				95BB427325421BD800EAFA87 /* CurvedSideRectangle.swift in Sources */,
 				95C7E62B2544498F008E9459 /* MapView.swift in Sources */,
+				956C2F0725459A67004BEC41 /* DailyStatsVC.swift in Sources */,
 				950FF1F52542E210002323FD /* WorldModel.swift in Sources */,
 				954CDF452541F6D000969C0A /* MapStatsVC.swift in Sources */,
 				954CDF112541E02300969C0A /* ContentView.swift in Sources */,

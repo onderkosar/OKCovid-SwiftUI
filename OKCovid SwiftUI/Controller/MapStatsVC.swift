@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct MapStatsVC: View {
+    
     var body: some View {
-        MapView()
+        NavigationView {
+            MapView()
+                .navigationBarTitle("World Map", displayMode: .inline)
+        }
+        
     }
 }
 

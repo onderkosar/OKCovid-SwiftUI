@@ -12,31 +12,54 @@ struct CountryListVC: View {
     @State var searchText   = ""
     @State var isSearching  = false
     
+    
     var body: some View {
-        VStack {
-            SearchBar(searchText: $searchText, isSearching: $isSearching)
-                .padding(.bottom, 30)
-            VStack {
-                ListCell(textOne: "CountryName", textTwo: "Cases", textThree: "Deaths", fontSize: 16, fontWeight: .bold, frameWidth: 130)
-                .padding(.horizontal)
-                if searchText.isEmpty {
-                    List(countries, id: \.country) { item in
-                        ListCell(textOne: item.country, textTwo: "\(item.cases)", textThree: "\(item.deaths)", fontSize: 12, fontWeight: .medium, frameWidth: 130)
+        NavigationView {
+            VStack(spacing: 0) {
+                SearchBar(searchText: $searchText, isSearching: $isSearching)
+                    .padding(.vertical, 5)
+                Divider()
+                    .frame(height: 4)
+                    .background(Color(.systemGray2))
+                    .padding(.bottom, 5)
+                VStack(spacing: 0) {
+                    ListCell(textOne: "Country", textTwo: "Cases", textThree: "Deaths", fontSize: 22, fontWeight: .bold, frameWidth: 130)
+                        .shadow(color: .secondary, radius: 1, x: 2, y: 2)
+                        .padding(.horizontal)
+                    if searchText.isEmpty {
+                        List {
+                            ForEach(countries, id: \.country) { item in
+                                NavigationLink(destination: DailyStatsVC(country: item.country)) {
+                                    ListCell(textOne: item.country, textTwo: "\(item.cases.numberFormat())", textThree: "\(item.deaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)
+                                        .foregroundColor(Color(.secondaryLabel))
+                                }
+                                
+                            }
+                        }
+                        .listStyle(PlainListStyle())
+                        .onAppear(perform: {
+                            getData()
+                        })
+                    } else {
+                        List {
+                            ForEach(countries.filter {
+                                $0.country.lowercased().contains(searchText.lowercased())
+                            }, id: \.country) { item in
+                                NavigationLink(destination: DailyStatsVC(country: item.country)) {
+                                    ListCell(textOne: item.country, textTwo: "\(item.cases.numberFormat())", textThree: "\(item.deaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)
+                                        .foregroundColor(Color(.secondaryLabel))
+                                }
+                                
+                            }
+                        }
+                        .listStyle(PlainListStyle())
+                        .onAppear(perform: {
+                            getData()
+                        })
                     }
-                    .onAppear(perform: {
-                        getData()
-                    })
-                } else {
-                    List(countries.filter {
-                        $0.country.lowercased().contains(searchText.lowercased())
-                    }, id: \.country) { item in
-                        ListCell(textOne: item.country, textTwo: "\(item.cases)", textThree: "\(item.deaths)", fontSize: 12, fontWeight: .medium, frameWidth: 130)
-                    }
-                    .onAppear(perform: {
-                        getData()
-                    })
                 }
             }
+            .navigationBarTitle("Country List", displayMode: .inline)
         }
     }
     
@@ -52,10 +75,5 @@ struct CountryListVC: View {
 struct CountryListVC_Previews: PreviewProvider {
     static var previews: some View {
         CountryListVC()
-//        HStack {
-//            CountryListVC()
-//            CountryListVC()
-//                .colorScheme(.dark)
-//        }.previewLayout(.fixed(width: 800, height: 400))
     }
 }

@@ -11,6 +11,8 @@ struct CountryView: View {
     var countryModel: CountryModel
     var countryIso: String
     
+    @State private var presentVC: Bool = false
+    
     var body: some View {
         ZStack {
             VStack() {
@@ -55,6 +57,12 @@ struct CountryView: View {
         }
         .frame(width: 340, height: 340, alignment: .center)
         .background(Color.secondary)
+        .onTapGesture {
+            self.presentVC = true
+        }
+        .sheet(isPresented: self.$presentVC) {
+            DailyStatsVC(country: countryModel.country)
+        }
     }
 }
 

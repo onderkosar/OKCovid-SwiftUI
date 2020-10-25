@@ -26,3 +26,12 @@ extension String {
         return strWithoutSpace
     }
 }
+
+extension Date {
+    func convertToMonthYearFormat() -> String {
+        let dateFormatter           = DateFormatter()
+        dateFormatter.dateFormat    = "MMM d"
+        
+        return dateFormatter.string(from: self)
+    }
+}

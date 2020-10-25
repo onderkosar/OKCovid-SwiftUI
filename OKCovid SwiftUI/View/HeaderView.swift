@@ -11,14 +11,14 @@ struct HeaderView: View {
     var worldModel: WorldModel
         
     var body: some View {
-        VStack() {
+        VStack(spacing: 0) {
             Text("WORLD STATS")
                 .font(.system(.largeTitle, design: .serif))
                 .fontWeight(.black)
                 .shadow(color: .secondary, radius: 3, x: 2, y: 2)
             
             ZStack {
-                CurvedSideRectangle()
+                Rectangle()
                     .fill(Color.secondary).opacity(0.8)
                     .frame(height: 190.0)
                     .shadow(radius: 20)
@@ -47,6 +47,8 @@ struct HeaderView: View {
                 }
                 .padding(.top, 5)
             }
+            .cornerRadius(9)
+            .padding(.horizontal, 8)
         }
     }
 }

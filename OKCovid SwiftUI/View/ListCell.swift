@@ -31,6 +31,7 @@ struct ListCell: View {
                 .font(.footnote)
                 .frame(width: (frameWidth-40), alignment: .trailing)
         }
+        .frame(height: (fontSize+1), alignment: .center)
     }
 }
 

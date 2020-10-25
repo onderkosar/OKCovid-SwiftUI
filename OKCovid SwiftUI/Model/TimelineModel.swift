@@ -16,3 +16,17 @@ struct TimelineModel: Codable, Hashable {
 struct TimelineInfoModel: Codable, Hashable {
     let cases, deaths, recovered: [String: Int]
 }
+
+struct TimelineData {
+    var country: String
+    var casesTimeline: Array<(key: Date, value: Int)>
+    var deathsTimeline: Array<(key: Date, value: Int)>
+}
+
+struct DailyModel: Hashable {
+    let uuid = UUID()
+
+    let dDate: Date
+    let dCases: Int
+    let dDeaths: Int
+}
