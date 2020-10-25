@@ -16,6 +16,7 @@ struct TotalStatsVC: View {
     
     var body: some View {
         VStack {
+            Spacer()
             if countriesModel.count < countries.count {
                 ProgressView()
                     .onAppear(perform: {
@@ -23,17 +24,19 @@ struct TotalStatsVC: View {
                     })
             } else {
                 HeaderView(worldModel: worldModel ?? WorldModel(population: 1, updated: 1, cases: 1, active: 1, deaths: 1, recovered: 1))
+                    .frame(maxWidth: 500)
                 Spacer()
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .top, spacing: 15) {
                         ForEach(0 ..< countriesModel.count) { item in
-                            CountryView(countryModel: countriesModel[item], countryIso: countriesModel[item].country.lowercased())
+                            CountryCardView(countryModel: countriesModel[item], countryIso: countriesModel[item].country.lowercased())
                                 .cornerRadius(13)
                         }
                     }
                     .padding(.leading, 8)
                 }
             }
+            Spacer()
         }
     }
     

@@ -36,25 +36,21 @@ struct CountryCardView: View {
                     HStack() {
                         OKStatCard(title: "Cases", subTitle: "\(countryModel.cases.numberFormat())")
                             .padding(.leading, 5)
-                            .shadow(color: Color(.darkGray), radius: 3, x: 2, y: 2)
                 
                         Spacer()
                         
                         OKStatCard(title: "Deaths", subTitle: "\(countryModel.deaths.numberFormat())")
                             .padding(.trailing, 5)
-                            .shadow(color: Color(.darkGray), radius: 3, x: 2, y: 2)
                     }
                     
                     HStack() {
                         OKStatCard(title: "Active", subTitle: "\(countryModel.active.numberFormat())")
                             .padding(.leading, 5)
-                            .shadow(color: Color(.darkGray), radius: 3, x: 2, y: 2)
                         
                         Spacer()
                         
                         OKStatCard(title: "Recovered", subTitle: "\(countryModel.recovered.numberFormat())")
                             .padding(.trailing, 5)
-                            .shadow(color: Color(.darkGray), radius: 3, x: 2, y: 2)
                     }
                     
                 }

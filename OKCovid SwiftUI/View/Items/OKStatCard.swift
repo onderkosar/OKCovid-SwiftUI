@@ -16,10 +16,11 @@ struct OKStatCard: View {
             Text(title)
                 .font(.system(.title, design: .serif))
                 .fontWeight(.bold)
-                .shadow(radius: 3)
+                .shadow(color: Color(.secondaryLabel), radius: 2, x: 2, y: 2)
             
             Text(subTitle)
                 .font(.system(.footnote, design: .serif))
+                .shadow(color: Color(.secondaryLabel), radius: 1, x: 1, y: 1)
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
                 .shadow(radius: 3)
@@ -27,12 +28,14 @@ struct OKStatCard: View {
         .frame(width: 160, height: 80)
         .background(Color(.systemGray3))
         .cornerRadius(8)
+        .shadow(color: Color(.darkGray), radius: 3, x: 2, y: 2)
     }
 }
 
 struct StatView_Previews: PreviewProvider {
     static var previews: some View {
         OKStatCard(title: "Title", subTitle: "Subtitle")
+            .colorScheme(.dark)
             .previewLayout(.sizeThatFits)
     }
 }

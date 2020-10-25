@@ -19,20 +19,21 @@ struct OKAnnotation: View {
             ZStack {
                 Circle()
                     .fill(Color.black)
-                    .frame(width: 24, height: 24)
+                    .frame(width: 29, height: 29)
                 
                 Circle()
                     .stroke(Color.black, lineWidth: 2)
-                    .frame(width: 22, height: 22)
+                    .frame(width: 27, height: 27)
                     .scaleEffect(1 + CGFloat(animation))
                     .opacity(1 - animation)
                 
                 Image(countryName.replaceSpace(with: "-"))
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 20, height: 20)
+                    .frame(width: 25, height: 25)
                     .clipShape(Circle())
                     .accentColor(Color.red)
+                    .shadow(color: Color(.black), radius: 2, x: 2, y: 2)
             }
             .onAppear {
                 withAnimation(Animation.easeIn(duration: 2)) {
@@ -43,30 +44,35 @@ struct OKAnnotation: View {
             VStack {
                 HStack(alignment: .top , spacing: 0) {
                     Text("Cases")
-                        .frame(width: 30, height: 11, alignment: .leading)
-                        .font(.system(size: 8, weight: .bold, design: .serif))
+                        .frame(width: 50, height: 20, alignment: .leading)
+                        .font(.system(size: 13, weight: .bold, design: .serif))
                         .foregroundColor(Color.black)
+                        .padding(.leading, 2)
                     Text("\(cases.numberFormat())")
-                        .frame(width: 50, height: 11, alignment: .trailing)
-                        .font(.system(size: 9, weight: .bold, design: .serif))
+                        .frame(width: 66, height: 20, alignment: .trailing)
+                        .font(.system(size: 12, weight: .bold, design: .serif))
                         .foregroundColor(Color.black)
+                        .padding(.trailing, 2)
                 }
                 HStack(alignment: .top , spacing: 0) {
                     Text("Deaths")
-                        .frame(width: 30, height: 11, alignment: .leading)
-                        .font(.system(size: 8, weight: .bold, design: .serif))
+                        .frame(width: 50, height: 20, alignment: .leading)
+                        .font(.system(size: 13, weight: .bold, design: .serif))
                         .foregroundColor(Color.black)
+                        .padding(.leading, 2)
                     Text("\(deaths.numberFormat())")
-                        .frame(width: 50, height: 11, alignment: .trailing)
-                        .font(.system(size: 9, weight: .bold, design: .serif))
+                        .frame(width: 66, height: 20, alignment: .trailing)
+                        .font(.system(size: 12, weight: .bold, design: .serif))
                         .foregroundColor(Color.black)
+                        .padding(.trailing, 2)
                 }
             }
             .background(Color(.systemGray)).opacity(0.8)
             .cornerRadius(4)
+            .shadow(color: Color(.black), radius: 2, x: 2, y: 2)
             
         }
-        .frame(width: 80, height: 50)
+        .frame(width: 118, height: 80)
     }
 }
 

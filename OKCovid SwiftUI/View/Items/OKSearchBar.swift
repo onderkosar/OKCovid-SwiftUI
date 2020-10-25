@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchBar: View {
+struct OKSearchBar: View {
     @Binding var searchText: String
     @Binding var isSearching: Bool
     

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ListCell: View {
+struct OKListRow: View {
     @State var textOne: String
     @State var textTwo: String
     @State var textThree: String
@@ -37,7 +37,7 @@ struct ListCell: View {
 
 struct ListCell_Previews: PreviewProvider {
     static var previews: some View {
-        ListCell(textOne: "Text1", textTwo: "Text2", textThree: "Text3", fontSize: 16, fontWeight: .bold, frameWidth: 130)
+        OKListRow(textOne: "Text1", textTwo: "Text2", textThree: "Text3", fontSize: 16, fontWeight: .bold, frameWidth: 130)
             .previewLayout(.sizeThatFits)
     }
 }

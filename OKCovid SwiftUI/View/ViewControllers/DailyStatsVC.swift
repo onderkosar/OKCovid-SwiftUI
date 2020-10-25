@@ -15,13 +15,13 @@ struct DailyStatsVC: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
-                ListCell(textOne: "Date", textTwo: "Cases", textThree: "Deaths", fontSize: 22, fontWeight: .bold, frameWidth: 130)
+                OKListRow(textOne: "Date", textTwo: "Cases", textThree: "Deaths", fontSize: 22, fontWeight: .bold, frameWidth: 130)
                     .shadow(color: .secondary, radius: 1, x: 2, y: 2)
                     .padding(.horizontal)
                     .padding(.top, 15)
                 List {
                     ForEach(dailyModel, id: \.uuid) { item in
-                        ListCell(textOne: "\(item.dDate.convertToMonthYearFormat())", textTwo: "\(item.dCases.numberFormat())", textThree: "\(item.dDeaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)
+                        OKListRow(textOne: "\(item.dDate.convertToMonthYearFormat())", textTwo: "\(item.dCases.numberFormat())", textThree: "\(item.dDeaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)
                             .foregroundColor(Color(.secondaryLabel))
                     }
                 }
@@ -32,6 +32,7 @@ struct DailyStatsVC: View {
             }
             .navigationBarTitle(country + " " + "Daily Stats", displayMode: .inline)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         
         
     }

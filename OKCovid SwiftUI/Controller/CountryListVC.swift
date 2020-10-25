@@ -16,21 +16,21 @@ struct CountryListVC: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
-                SearchBar(searchText: $searchText, isSearching: $isSearching)
+                OKSearchBar(searchText: $searchText, isSearching: $isSearching)
                     .padding(.vertical, 5)
                 Divider()
                     .frame(height: 4)
                     .background(Color(.systemGray2))
                     .padding(.bottom, 5)
                 VStack(spacing: 0) {
-                    ListCell(textOne: "Country", textTwo: "Cases", textThree: "Deaths", fontSize: 22, fontWeight: .bold, frameWidth: 130)
+                    OKListRow(textOne: "Country", textTwo: "Cases", textThree: "Deaths", fontSize: 22, fontWeight: .bold, frameWidth: 130)
                         .shadow(color: .secondary, radius: 1, x: 2, y: 2)
                         .padding(.horizontal)
                     if searchText.isEmpty {
                         List {
                             ForEach(countries, id: \.country) { item in
                                 NavigationLink(destination: DailyStatsVC(country: item.country)) {
-                                    ListCell(textOne: item.country, textTwo: "\(item.cases.numberFormat())", textThree: "\(item.deaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)
+                                    OKListRow(textOne: item.country, textTwo: "\(item.cases.numberFormat())", textThree: "\(item.deaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)
                                         .foregroundColor(Color(.secondaryLabel))
                                 }
                                 
@@ -46,7 +46,7 @@ struct CountryListVC: View {
                                 $0.country.lowercased().contains(searchText.lowercased())
                             }, id: \.country) { item in
                                 NavigationLink(destination: DailyStatsVC(country: item.country)) {
-                                    ListCell(textOne: item.country, textTwo: "\(item.cases.numberFormat())", textThree: "\(item.deaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)
+                                    OKListRow(textOne: item.country, textTwo: "\(item.cases.numberFormat())", textThree: "\(item.deaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)
                                         .foregroundColor(Color(.secondaryLabel))
                                 }
                                 
@@ -61,6 +61,7 @@ struct CountryListVC: View {
             }
             .navigationBarTitle("Country List", displayMode: .inline)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     func getData() {

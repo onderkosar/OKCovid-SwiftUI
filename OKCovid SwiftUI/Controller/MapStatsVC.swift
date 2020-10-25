@@ -14,6 +14,7 @@ struct MapStatsVC: View {
             MapView()
                 .navigationBarTitle("World Map", displayMode: .inline)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         
     }
 }

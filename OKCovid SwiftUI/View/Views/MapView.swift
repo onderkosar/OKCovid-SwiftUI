@@ -9,7 +9,6 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
-    let countries = ["usa", "uk", "ita", "fr", "esp", "deu", "tr", "bel", "can", "au", "bra"]
     
     @State private var region: MKCoordinateRegion = {
         var mapCoordinates  = CLLocationCoordinate2D(latitude: 55.000000, longitude: 15.0000000)
@@ -25,7 +24,7 @@ struct MapView: View {
     var body: some View {
         Map(coordinateRegion: $region, annotationItems: anotationsModel, annotationContent: { country in
             MapAnnotation(coordinate: country.location) {
-                MapAnnotationView(countryName: country.name.lowercased(), cases: country.cases, deaths: country.deaths)
+                OKAnnotation(countryName: country.name.lowercased(), cases: country.cases, deaths: country.deaths)
             }
         })
         .onAppear(perform: {

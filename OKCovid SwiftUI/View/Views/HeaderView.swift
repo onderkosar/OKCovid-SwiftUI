@@ -18,38 +18,36 @@ struct HeaderView: View {
                 .shadow(color: .secondary, radius: 3, x: 2, y: 2)
             
             ZStack {
-                Rectangle()
-                    .fill(Color.secondary).opacity(0.8)
-                    .frame(height: 190.0)
-                    .shadow(radius: 20)
-                
-                VStack(alignment: .center, spacing: 20) {
-                    HStack() {
-                        StatView(title: "Cases", subTitle: "\(worldModel.cases.numberFormat())")
+                VStack(spacing: 20) {
+                    HStack {
+                        OKStatCard(title: "Cases", subTitle: "\(worldModel.cases.numberFormat())")
                         .padding(.leading, 5)
                 
                         Spacer()
                         
-                        StatView(title: "Deaths", subTitle: "\(worldModel.deaths.numberFormat())")
+                        OKStatCard(title: "Deaths", subTitle: "\(worldModel.deaths.numberFormat())")
                         .padding(.trailing, 5)
                     }
+                    .padding(.vertical, 5)
                     
-                    HStack() {
-                        StatView(title: "Active", subTitle: "\(worldModel.active.numberFormat())")
+                    HStack {
+                        OKStatCard(title: "Active", subTitle: "\(worldModel.active.numberFormat())")
                         .padding(.leading, 5)
                         
                         Spacer()
                         
-                        StatView(title: "Recovered", subTitle: "\(worldModel.recovered.numberFormat())")
+                        OKStatCard(title: "Recovered", subTitle: "\(worldModel.recovered.numberFormat())")
                         .padding(.trailing, 5)
                     }
+                    .padding(.vertical, 5)
                     
                 }
-                .padding(.top, 5)
             }
+            .background(Color(.systemGray))
             .cornerRadius(9)
             .padding(.horizontal, 8)
         }
+        .shadow(color: .secondary, radius: 3, x: 2, y: 2)
     }
 }
 
