@@ -20,16 +20,17 @@ struct CountryCardView: View {
                     Image(countryIso)
                         .resizable()
                         .frame(width: 130, height: 130, alignment: .center)
-                        .shadow(color: Color(.darkGray), radius: 3, x: 2, y: 2)
+                        .shadow(color: Color(.darkGray), radius: 1, x: 2, y: 2)
                     Spacer()
                     Text(countryModel.country)
                         .font(.system(.title2, design: .serif))
                         .fontWeight(.bold)
+                        .foregroundColor(Color(.darkText))
                         .padding(5)
                         .padding(.trailing, 15)
                         .multilineTextAlignment(.center)
                         .lineLimit(2)
-                        .shadow(color: Color(.darkGray), radius: 3, x: 2, y: 2)
+                        .shadow(color: Color(.darkGray), radius: 1, x: 0.7, y: 0.7)
                 }
                 .padding(.horizontal, 8)
                 VStack(alignment: .center, spacing: 20) {
@@ -72,5 +73,6 @@ struct CountryView_Previews: PreviewProvider {
     static var previews: some View {
         CountryCardView(countryModel: CountryModel(country: "USA", countryInfo: CountryInfo(_id: 0, flag: "", iso2: "", iso3: "", lat: 0, long: 0), population: 0, updated: 0, tests: 0, cases: 0, active: 0, deaths: 0, recovered: 0), countryIso: "usa")
             .previewLayout(.sizeThatFits)
+            .colorScheme(.dark)
     }
 }

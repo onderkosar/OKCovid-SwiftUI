@@ -16,11 +16,11 @@ struct OKStatCard: View {
             Text(title)
                 .font(.system(.title, design: .serif))
                 .fontWeight(.bold)
-                .shadow(color: Color(.secondaryLabel), radius: 2, x: 2, y: 2)
+                .shadow(color: Color(.secondaryLabel), radius: 1, x: 0.7, y: 0.7)
             
             Text(subTitle)
                 .font(.system(.footnote, design: .serif))
-                .shadow(color: Color(.secondaryLabel), radius: 1, x: 1, y: 1)
+                .shadow(color: Color(.secondaryLabel), radius: 1, x: 0.7, y: 0.7)
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
                 .shadow(radius: 3)

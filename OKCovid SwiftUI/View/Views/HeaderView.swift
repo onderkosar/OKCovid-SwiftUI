@@ -15,7 +15,7 @@ struct HeaderView: View {
             Text("WORLD STATS")
                 .font(.system(.largeTitle, design: .serif))
                 .fontWeight(.black)
-                .shadow(color: .secondary, radius: 3, x: 2, y: 2)
+                .shadow(color: .secondary, radius: 1, x: 0.7, y: 0.7)
             
             ZStack {
                 VStack(spacing: 20) {
@@ -47,7 +47,7 @@ struct HeaderView: View {
             .cornerRadius(9)
             .padding(.horizontal, 8)
         }
-        .shadow(color: .secondary, radius: 3, x: 2, y: 2)
+        .shadow(color: .secondary, radius: 1, x: 1, y: 1)
     }
 }
 

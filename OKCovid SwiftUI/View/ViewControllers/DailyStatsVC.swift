@@ -16,9 +16,9 @@ struct DailyStatsVC: View {
         NavigationView {
             VStack(spacing: 0) {
                 OKListRow(textOne: "Date", textTwo: "Cases", textThree: "Deaths", fontSize: 22, fontWeight: .bold, frameWidth: 130)
-                    .shadow(color: .secondary, radius: 1, x: 2, y: 2)
                     .padding(.horizontal)
                     .padding(.top, 15)
+                Spacer()
                 List {
                     ForEach(dailyModel, id: \.uuid) { item in
                         OKListRow(textOne: "\(item.dDate.convertToMonthYearFormat())", textTwo: "\(item.dCases.numberFormat())", textThree: "\(item.dDeaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)

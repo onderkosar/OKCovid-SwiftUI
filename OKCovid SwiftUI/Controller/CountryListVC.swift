@@ -24,8 +24,8 @@ struct CountryListVC: View {
                     .padding(.bottom, 5)
                 VStack(spacing: 0) {
                     OKListRow(textOne: "Country", textTwo: "Cases", textThree: "Deaths", fontSize: 22, fontWeight: .bold, frameWidth: 130)
-                        .shadow(color: .secondary, radius: 1, x: 2, y: 2)
                         .padding(.horizontal)
+                    Spacer()
                     if searchText.isEmpty {
                         List {
                             ForEach(countries, id: \.country) { item in
@@ -38,10 +38,6 @@ struct CountryListVC: View {
                                 }
                             }
                         }
-                        .listStyle(PlainListStyle())
-                        .onAppear(perform: {
-                            getData()
-                        })
                     } else {
                         List {
                             ForEach(countries.filter {
@@ -54,12 +50,12 @@ struct CountryListVC: View {
                                 
                             }
                         }
-                        .listStyle(PlainListStyle())
-                        .onAppear(perform: {
-                            getData()
-                        })
                     }
                 }
+                .listStyle(PlainListStyle())
+                .onAppear(perform: {
+                    getData()
+                })
             }
             .navigationBarTitle("Country List", displayMode: .inline)
         }

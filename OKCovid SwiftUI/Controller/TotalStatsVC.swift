@@ -31,6 +31,7 @@ struct TotalStatsVC: View {
                         ForEach(0 ..< countriesModel.count) { item in
                             CountryCardView(countryModel: countriesModel[item], countryIso: countriesModel[item].country.lowercased())
                                 .cornerRadius(13)
+                                .shadow(color: .secondary, radius: 1, x: 1, y: 1)
                         }
                     }
                     .padding(.leading, 8)
