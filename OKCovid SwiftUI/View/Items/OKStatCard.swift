@@ -22,7 +22,7 @@ struct OKStatCard: View {
                 .font(.system(.footnote, design: .serif))
                 .shadow(color: Color(.secondaryLabel), radius: 1, x: 0.7, y: 0.7)
                 .lineLimit(2)
-                .multilineTextAlignment(.leading)
+                .multilineTextAlignment(.center)
                 .shadow(radius: 3)
         } //: VSTACK
         .frame(width: 160, height: 80)

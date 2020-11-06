@@ -35,3 +35,10 @@ extension Date {
         return dateFormatter.string(from: self)
     }
 }
+
+extension Double {
+    func rounded(by places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+}

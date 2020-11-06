@@ -19,24 +19,32 @@ struct HeaderView: View {
             
             ZStack {
                 VStack(spacing: 20) {
+                    Text("Population: \(worldModel.population.numberFormat())")
+                        .font(.system(size: 17, design: .serif))
+                        .fontWeight(.light)
+                        .foregroundColor(Color(.lightText))
+                        .padding(.top, 5)
+                        .padding(.trailing, 15)
+                        .multilineTextAlignment(.center)
+                        .lineLimit(2)
+                        .shadow(color: Color(.darkGray), radius: 1, x: 0.7, y: 0.7)
                     HStack {
-                        OKStatCard(title: "Cases", subTitle: "\(worldModel.cases.numberFormat())")
-                        .padding(.leading, 5)
-                
+                        OKStatCard(title: "Cases", subTitle: "\(worldModel.cases.numberFormat())\n" + "\(((Double(worldModel.cases) * 100) / Double(worldModel.population)).rounded(by: 2))% of the population")
+                            .padding(.leading, 5)
                         Spacer()
                         
-                        OKStatCard(title: "Deaths", subTitle: "\(worldModel.deaths.numberFormat())")
+                        OKStatCard(title: "Deaths", subTitle: "\(worldModel.deaths.numberFormat())\n" + "\(((Double(worldModel.deaths) * 100) / Double(worldModel.cases)).rounded(by: 2))% of total cases")
                         .padding(.trailing, 5)
                     }
                     .padding(.vertical, 5)
                     
                     HStack {
-                        OKStatCard(title: "Active", subTitle: "\(worldModel.active.numberFormat())")
+                        OKStatCard(title: "Active", subTitle: "\(worldModel.active.numberFormat())\n" + "\(((Double(worldModel.active) * 100) / Double(worldModel.population)).rounded(by: 2))% of the population")
                         .padding(.leading, 5)
                         
                         Spacer()
                         
-                        OKStatCard(title: "Recovered", subTitle: "\(worldModel.recovered.numberFormat())")
+                        OKStatCard(title: "Recovered", subTitle: "\(worldModel.recovered.numberFormat())\n" + "\(((Double(worldModel.recovered) * 100) / Double(worldModel.cases)).rounded(by: 2))% of total cases")
                         .padding(.trailing, 5)
                     }
                     .padding(.vertical, 5)
