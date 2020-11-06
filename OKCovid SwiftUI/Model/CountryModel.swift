@@ -18,6 +18,18 @@ struct CountryModel: Codable, Hashable {
     let active : Int
     let deaths : Int
     let recovered : Int
+    
+    var countryName:String {
+        var fullName = ""
+        if country == "USA" {
+            fullName = "United States of America"
+        } else if country == "UK" {
+            fullName = "United Kingdom"
+        } else {
+            fullName = country
+        }
+        return fullName
+    }
 }
 
 struct CountryInfo: Codable, Hashable {
