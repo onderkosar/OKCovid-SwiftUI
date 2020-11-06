@@ -29,11 +29,13 @@ struct CountryListVC: View {
                     if searchText.isEmpty {
                         List {
                             ForEach(countries, id: \.country) { item in
-                                NavigationLink(destination: DailyStatsVC(country: item.country)) {
+                                ZStack {
                                     OKListRow(textOne: item.country, textTwo: "\(item.cases.numberFormat())", textThree: "\(item.deaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)
                                         .foregroundColor(Color(.secondaryLabel))
+                                    NavigationLink(destination: DailyStatsVC(country: item.country)) {
+                                        EmptyView()
+                                    }
                                 }
-                                
                             }
                         }
                         .listStyle(PlainListStyle())
