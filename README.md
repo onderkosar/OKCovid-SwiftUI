@@ -5,9 +5,9 @@
 - Map Screen: Dynamic map view is developed to look around latest stats while navigating the world map.
 - Country List: Users can view latest stats of all countries on a list view and dive into daily changes with a single tap.
 
-![OKCovidSwiftUI Poster 001](https://user-images.githubusercontent.com/36846931/97117771-ff026b00-1716-11eb-887a-07e593d77317.png)
-![OKCovidSwiftUI Poster 002](https://user-images.githubusercontent.com/36846931/97117774-00339800-1717-11eb-9939-e3bd20fb39de.png)
-![OKCovidSwiftUI Poster 003](https://user-images.githubusercontent.com/36846931/97117780-01fd5b80-1717-11eb-9d1e-0a7877e350fc.png)
+![OKCovidSwiftUI Poster 001](https://user-images.githubusercontent.com/36846931/98409395-d28a0f80-2083-11eb-8338-5b934233c8e1.png)
+![OKCovidSwiftUI Poster 002](https://user-images.githubusercontent.com/36846931/98409397-d453d300-2083-11eb-8843-9776e28d68fd.png)
+![OKCovidSwiftUI Poster 003](https://user-images.githubusercontent.com/36846931/98409401-d61d9680-2083-11eb-8789-a53d4b96edd8.png)
 
 #### Some features;
 - SwiftUI 2.0
