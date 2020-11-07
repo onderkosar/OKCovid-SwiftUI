@@ -46,25 +46,19 @@ struct CountryCardView: View {
                 .padding(.horizontal, 8)
                 VStack(alignment: .center, spacing: 20) {
                     HStack() {
-                        OKStatCard(title: "Cases", subTitle: "\(countryModel.cases.numberFormat())\n" + "\(((Double(countryModel.cases) * 100) / Double(countryModel.population)).rounded(by: 2))% of the population")
+                        OKStatCard(title: "Cases", subTitle: statOfCases())
                             .padding(.leading, 5)
-                
                         Spacer()
-                        
-                        OKStatCard(title: "Deaths", subTitle: "\(countryModel.deaths.numberFormat())\n" + "\(((Double(countryModel.deaths) * 100) / Double(countryModel.cases)).rounded(by: 2))% of total cases")
+                        OKStatCard(title: "Deaths", subTitle: statOfDeaths())
                             .padding(.trailing, 5)
                     }
-                    
                     HStack() {
-                        OKStatCard(title: "Active", subTitle: "\(countryModel.active.numberFormat())\n" + "\(((Double(countryModel.active) * 100) / Double(countryModel.population)).rounded(by: 2))% of the population")
+                        OKStatCard(title: "Active", subTitle: statOfActive())
                             .padding(.leading, 5)
-                        
                         Spacer()
-                        
-                        OKStatCard(title: "Recovered", subTitle: "\(countryModel.recovered.numberFormat())\n" + "\(((Double(countryModel.recovered) * 100) / Double(countryModel.cases)).rounded(by: 2))% of total cases")
+                        OKStatCard(title: "Recovered", subTitle: statOfRocovered())
                             .padding(.trailing, 5)
                     }
-                    
                 }
                 .padding(.top, 5)
             }
@@ -76,6 +70,38 @@ struct CountryCardView: View {
         }
         .sheet(isPresented: self.$presentVC) {
             DailyStatsVC(country: countryModel.country)
+        }
+    }
+    
+    func statOfCases() -> String {
+        if countryModel.cases == 0 {
+            return "N/A\n"
+        } else {
+            return "\(countryModel.cases.numberFormat())\n" + "\(((Double(countryModel.cases) * 100) / Double(countryModel.population)).rounded(by: 2))% of the population"
+        }
+    }
+    
+    func statOfDeaths() -> String {
+        if countryModel.deaths == 0 {
+            return "N/A\n"
+        } else {
+            return "\(countryModel.deaths.numberFormat())\n" + "\(((Double(countryModel.deaths) * 100) / Double(countryModel.cases)).rounded(by: 2))% of total cases"
+        }
+    }
+    
+    func statOfActive() -> String {
+        if countryModel.recovered == 0 {
+            return "N/A\n"
+        } else {
+            return "\(countryModel.active.numberFormat())\n" + "\(((Double(countryModel.active) * 100) / Double(countryModel.population)).rounded(by: 2))% of the population"
+        }
+    }
+    
+    func statOfRocovered() -> String {
+        if countryModel.recovered == 0 {
+            return "N/A\n"
+        } else {
+            return "\(countryModel.recovered.numberFormat())\n" + "\(((Double(countryModel.recovered) * 100) / Double(countryModel.cases)).rounded(by: 2))% of total cases"
         }
     }
 }
