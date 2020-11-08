@@ -12,7 +12,7 @@ struct CountryInfoForm: View {
     
     var body: some View {
         Form {
-            Section(header: Text("last updated: ")) {
+            Section(header: Text("last updated: " + (countryModel.updated / 1000).getDateFromTimeStamp() + " (GMT)")) {
                 HStack {
                     Image(systemName: "person.2")
                         .frame(width: 20, height: 20, alignment: .center)
@@ -49,7 +49,7 @@ struct CountryInfoForm: View {
 
 struct CountryInfoForm_Previews: PreviewProvider {
     static var previews: some View {
-        CountryInfoForm(countryModel: CountryModel(country: "USA", countryInfo: CountryInfo(_id: 840, flag: "", iso2: "US", iso3: "USA", lat: 38, long: -97), population: 331679824, updated: 1604866150922, tests: 156566706, cases: 9934653, active: 3351368, deaths: 241098, recovered: 6342187))
+        CountryInfoForm(countryModel: CountryModel(country: "USA", countryInfo: CountryInfo(_id: 840, flag: "", iso2: "US", iso3: "USA", lat: 38, long: -97), population: 331679824, updated: 1604871554091, tests: 156566706, cases: 9934653, active: 3351368, deaths: 241098, recovered: 6342187))
             .previewLayout(.sizeThatFits)
             .colorScheme(.dark)
     }

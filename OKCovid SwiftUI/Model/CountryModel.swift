@@ -12,7 +12,7 @@ struct CountryModel: Codable, Hashable {
     let country : String
     let countryInfo : CountryInfo
     let population : Int
-    let updated : Int
+    let updated : Double
     let tests : Int
     let cases : Int
     let active : Int

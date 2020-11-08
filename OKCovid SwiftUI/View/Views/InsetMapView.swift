@@ -9,6 +9,8 @@ import SwiftUI
 import MapKit
 
 struct InsetMapView: View {
+    var countryModel: CountryModel
+    
     @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.8333, longitude: 12.8333), span: MKCoordinateSpan(latitudeDelta: 10.0, longitudeDelta: 10.0))
     
     var body: some View {
@@ -16,15 +18,15 @@ struct InsetMapView: View {
             .overlay(
                 NavigationLink(destination: MapView()) {
                     HStack {
-                        Image(systemName: "mappin.circle")
-                            .foregroundColor(Color(.systemOrange))
-                            .imageScale(.large)
-                        Text("Locations")
-                            .foregroundColor(Color(.systemGray3))
-                            .fontWeight(.bold)
+                        Image(countryModel.country.lowercased().replaceSpace(with: "-"))
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 55, height: 55)
+                            .clipShape(Circle())
+                            .shadow(color: Color(.black), radius: 2, x: 2, y: 2)
                     } //: HSTACK
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 14)
+                    .padding(.vertical, 3)
+                    .padding(.horizontal, 3)
                     .background(
                         Color.black
                             .opacity(0.6)
@@ -40,7 +42,7 @@ struct InsetMapView: View {
 
 struct InsetMapView_Previews: PreviewProvider {
     static var previews: some View {
-        InsetMapView()
+        InsetMapView(countryModel: CountryModel(country: "usa", countryInfo: CountryInfo(_id: 840, flag: "", iso2: "US", iso3: "USA", lat: 38, long: -97), population: 331679824, updated: 1604871554091, tests: 156566706, cases: 9934653, active: 3351368, deaths: 241098, recovered: 6342187))
             .previewLayout(.sizeThatFits)
             .colorScheme(.dark)
     }

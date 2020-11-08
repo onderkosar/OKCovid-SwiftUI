@@ -22,7 +22,7 @@ struct AboutCountryVC: View {
                         .frame(height: 4)
                         .background(Color(.systemGray2))
                     
-                    InsetMapView(region: MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: countryModel.countryInfo.lat ?? 48, longitude: countryModel.countryInfo.long ?? 9), span: MKCoordinateSpan(latitudeDelta: 10.0, longitudeDelta: 10.0)))
+                    InsetMapView(countryModel: countryModel, region: MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: countryModel.countryInfo.lat ?? 48, longitude: countryModel.countryInfo.long ?? 9), span: MKCoordinateSpan(latitudeDelta: 10.0, longitudeDelta: 10.0)))
                     
                     Divider()
                         .frame(height: 4)

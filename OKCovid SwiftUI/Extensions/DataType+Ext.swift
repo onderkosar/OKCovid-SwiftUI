@@ -41,4 +41,17 @@ extension Double {
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor
     }
+    
+    func getDateFromTimeStamp() -> String {
+        let dateFromServer = NSDate(timeIntervalSince1970: self)
+        let dateFormatter = DateFormatter()
+        dateFormatter.doesRelativeDateFormatting = true
+        dateFormatter.timeStyle = .short
+        dateFormatter.dateStyle = .short
+        
+        let string = dateFormatter.string(from: dateFromServer as Date)
+        
+        
+        return string
+    }
 }
