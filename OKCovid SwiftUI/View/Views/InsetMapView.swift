@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct InsetMapView: View {
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 38, longitude: -97), span: MKCoordinateSpan(latitudeDelta: 30.0, longitudeDelta: 30.0))
+    @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.8333, longitude: 12.8333), span: MKCoordinateSpan(latitudeDelta: 10.0, longitudeDelta: 10.0))
     
     var body: some View {
         Map(coordinateRegion: $region)

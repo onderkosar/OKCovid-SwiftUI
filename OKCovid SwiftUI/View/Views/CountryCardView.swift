@@ -13,6 +13,7 @@ struct CountryCardView: View {
     
     @State private var presentVC: Bool = false
     
+    
     var body: some View {
         ZStack {
             VStack() {
@@ -69,7 +70,7 @@ struct CountryCardView: View {
             self.presentVC = true
         }
         .sheet(isPresented: self.$presentVC) {
-            AboutCountryVC(country: countryModel.country, countryModel: countryModel)
+            AboutCountryVC(countryModel: countryModel)
         }
     }
     

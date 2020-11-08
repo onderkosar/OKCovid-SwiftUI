@@ -32,7 +32,7 @@ struct CountryListVC: View {
                                 ZStack {
                                     OKListRow(textOne: item.country, textTwo: "\(item.cases.numberFormat())", textThree: "\(item.deaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)
                                         .foregroundColor(Color(.secondaryLabel))
-                                    NavigationLink(destination: AboutCountryVC(country: item.country, countryModel: item)) {
+                                    NavigationLink(destination: AboutCountryVC(countryModel: item)) {
                                         EmptyView()
                                     }
                                 }
@@ -43,7 +43,7 @@ struct CountryListVC: View {
                             ForEach(countries.filter {
                                 $0.country.lowercased().contains(searchText.lowercased())
                             }, id: \.country) { item in
-                                NavigationLink(destination: AboutCountryVC(country: item.country, countryModel: item)) {
+                                NavigationLink(destination: AboutCountryVC(countryModel: item)) {
                                     OKListRow(textOne: item.country, textTwo: "\(item.cases.numberFormat())", textThree: "\(item.deaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)
                                         .foregroundColor(Color(.secondaryLabel))
                                 }
