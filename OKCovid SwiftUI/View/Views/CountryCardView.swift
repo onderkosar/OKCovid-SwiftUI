@@ -69,7 +69,7 @@ struct CountryCardView: View {
             self.presentVC = true
         }
         .sheet(isPresented: self.$presentVC) {
-            DailyStatsVC(country: countryModel.country)
+            AboutCountryVC(country: countryModel.country, countryModel: countryModel)
         }
     }
     
