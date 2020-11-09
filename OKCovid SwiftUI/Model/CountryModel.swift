@@ -30,6 +30,13 @@ struct CountryModel: Codable, Hashable {
         }
         return fullName
     }
+    
+    var updatedLblText: String {
+        let converted   = (updated / 1000).getDateFromTimeStamp()
+        let dateLblText = "last updated: " + converted + " (GMT)"
+        
+        return dateLblText
+    }
 }
 
 struct CountryInfo: Codable, Hashable {

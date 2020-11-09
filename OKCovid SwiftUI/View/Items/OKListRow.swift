@@ -36,7 +36,7 @@ struct OKListRow: View {
     }
 }
 
-struct ListCell_Previews: PreviewProvider {
+struct OKListRow_Previews: PreviewProvider {
     static var previews: some View {
         OKListRow(textOne: "Text1", textTwo: "Text2", textThree: "Text3", fontSize: 16, fontWeight: .bold, frameWidth: 130)
             .previewLayout(.sizeThatFits)

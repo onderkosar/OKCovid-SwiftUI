@@ -76,7 +76,7 @@ struct OKAnnotation: View {
     }
 }
 
-struct MapAnnotationView_Previews: PreviewProvider {
+struct OKAnnotation_Previews: PreviewProvider {
     static var previews: some View {
         OKAnnotation(countryName: "usa", cases: 0, deaths: 0)
             .colorScheme(.light)

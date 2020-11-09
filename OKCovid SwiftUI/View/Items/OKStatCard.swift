@@ -32,7 +32,7 @@ struct OKStatCard: View {
     }
 }
 
-struct StatView_Previews: PreviewProvider {
+struct OKStatCard_Previews: PreviewProvider {
     static var previews: some View {
         OKStatCard(title: "Title", subTitle: "Subtitle")
             .colorScheme(.dark)

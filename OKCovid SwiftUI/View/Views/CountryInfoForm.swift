@@ -12,7 +12,7 @@ struct CountryInfoForm: View {
     
     var body: some View {
         Form {
-            Section(header: Text("last updated: " + (countryModel.updated / 1000).getDateFromTimeStamp() + " (GMT)")) {
+            Section(header: Text(countryModel.updatedLblText)) {
                 HStack {
                     Image(systemName: "person.2")
                         .frame(width: 20, height: 20, alignment: .center)
@@ -44,6 +44,7 @@ struct CountryInfoForm: View {
             }
         }
         .frame(height: 220, alignment: .top)
+        .disabled(true)
     }
 }
 
