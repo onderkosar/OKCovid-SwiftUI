@@ -22,10 +22,9 @@ struct CountryListVC: View {
                     .frame(height: 4)
                     .background(Color(.systemGray2))
                     .padding(.bottom, 5)
-                VStack(spacing: 0) {
-                    OKListRow(textOne: "Country", textTwo: "Cases", textThree: "Deaths", fontSize: 22, fontWeight: .bold, frameWidth: 130)
-                        .padding(.horizontal)
-                    Spacer()
+                Section(header:
+                            OKListRow(textOne: "Country", textTwo: "Cases", textThree: "Deaths", fontSize: 22, fontWeight: .bold, frameWidth: 130)
+                ) {
                     if searchText.isEmpty {
                         List {
                             ForEach(countries, id: \.country) { item in
@@ -37,6 +36,7 @@ struct CountryListVC: View {
                                     }
                                 }
                             }
+                            .listRowInsets(EdgeInsets())
                         }
                     } else {
                         List {
@@ -49,11 +49,14 @@ struct CountryListVC: View {
                                 }
                                 
                             }
+                            .listRowInsets(EdgeInsets())
                         }
                     }
+                    
                 }
-                .listStyle(PlainListStyle())
+                .padding(.horizontal)
                 .onAppear(perform: {
+                    UITableView.appearance().showsVerticalScrollIndicator = false
                     getData()
                 })
             }

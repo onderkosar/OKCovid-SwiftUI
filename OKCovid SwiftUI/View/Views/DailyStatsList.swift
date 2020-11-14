@@ -24,19 +24,24 @@ struct DailyStatsList: View {
             }
             .padding(.top, 15)
             .padding(.vertical, 2)
-            OKListRow(textOne: "Date", textTwo: "Cases", textThree: "Deaths", fontSize: 22, fontWeight: .bold, frameWidth: 130)
-                .padding(.horizontal)
-            List {
-                ForEach(dailyModel, id: \.uuid) { item in
-                    OKListRow(textOne: "\(item.dDate.convertToMonthYearFormat())", textTwo: "\(item.dCases.numberFormat())", textThree: "\(item.dDeaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)
-                        .foregroundColor(Color(.secondaryLabel))
+            Section(header:
+                        OKListRow(textOne: "Date", textTwo: "Cases", textThree: "Deaths", fontSize: 22, fontWeight: .bold, frameWidth: 130)
+            ) {
+                List {
+                    ForEach(dailyModel, id: \.uuid) { item in
+                        OKListRow(textOne: "\(item.dDate.convertToMonthYearFormat())", textTwo: "\(item.dCases.numberFormat())", textThree: "\(item.dDeaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)
+                            .foregroundColor(Color(.secondaryLabel))
+                    }
+                    .listRowInsets(EdgeInsets())
                 }
+                .frame(height: 600, alignment: .top)
+                .onAppear(perform: {
+                    UITableView.appearance().showsVerticalScrollIndicator = false
+                    downloadTimelineData(for: country)
+                })
             }
-            .listStyle(PlainListStyle())
-            .frame(height: 600, alignment: .top)
-            .onAppear(perform: {
-                downloadTimelineData(for: country)
-            })
+            .padding(.horizontal)
+            
         }
     }
     
