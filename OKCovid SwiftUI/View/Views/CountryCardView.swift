@@ -109,7 +109,7 @@ struct CountryCardView: View {
 
 struct CountryCardView_Previews: PreviewProvider {
     static var previews: some View {
-        CountryCardView(countryModel: CountryModel(country: "USA", countryInfo: CountryInfo(_id: 0, flag: "", iso2: "", iso3: "", lat: 0, long: 0), population: 331679824, updated: 0, tests: 0, cases: 9934653, active: 3351368, deaths: 241098, recovered: 6342187), countryIso: "usa")
+        CountryCardView(countryModel: MockData.countryModel, countryIso: "usa")
             .previewLayout(.sizeThatFits)
             .colorScheme(.dark)
     }

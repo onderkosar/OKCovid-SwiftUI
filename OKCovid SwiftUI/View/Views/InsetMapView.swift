@@ -42,7 +42,7 @@ struct InsetMapView: View {
 
 struct InsetMapView_Previews: PreviewProvider {
     static var previews: some View {
-        InsetMapView(countryModel: CountryModel(country: "usa", countryInfo: CountryInfo(_id: 840, flag: "", iso2: "US", iso3: "USA", lat: 38, long: -97), population: 331679824, updated: 1604871554091, tests: 156566706, cases: 9934653, active: 3351368, deaths: 241098, recovered: 6342187))
+        InsetMapView(countryModel: MockData.countryModel)
             .previewLayout(.sizeThatFits)
             .colorScheme(.dark)
     }
