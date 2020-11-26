@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class TotalStatsViewModel: ObservableObject {
+final class CovidStatsViewModel: ObservableObject {
     @Published var worldData: WorldModel?
     @Published var countriesData: [CountryModel]    = []
     @Published var isLoading                        = true
@@ -21,7 +21,7 @@ final class TotalStatsViewModel: ObservableObject {
     
     let countries = ["usa", "uk", "ita", "fr", "esp", "deu", "tr", "bel", "can", "au", "bra"]
     
-    func getData() {
+    func getTotalStatsData() {
         NetworkManager.shared.fetch(for: nil, ifDaily: false) { (result: WorldModel) in
             DispatchQueue.main.async {
                 self.worldData = result
@@ -37,6 +37,14 @@ final class TotalStatsViewModel: ObservableObject {
                         self.isLoading = false
                     }
                 }
+            }
+        }
+    }
+    
+    func getCountryListData() {
+        NetworkManager.shared.fetch(for: "", ifDaily: false) { (result: [CountryModel]) in
+            DispatchQueue.main.async {
+                self.countriesData = result
             }
         }
     }

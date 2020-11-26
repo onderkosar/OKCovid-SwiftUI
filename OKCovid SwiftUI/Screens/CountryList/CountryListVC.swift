@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CountryListVC: View {
-    @StateObject var viewModel  = CountryListViewModel()
+    @StateObject var viewModel  = CovidStatsViewModel()
     @State var searchText       = ""
     @State var isSearching      = false
     
@@ -42,7 +42,7 @@ struct CountryListVC: View {
                 .padding(.horizontal)
                 .onAppear(perform: {
                     UITableView.appearance().showsVerticalScrollIndicator = false
-                    viewModel.getData()
+                    viewModel.getCountryListData()
                 })
             }
             .navigationBarTitle("Country List", displayMode: .inline)

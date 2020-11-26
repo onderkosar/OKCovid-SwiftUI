@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct TotalStatsVC: View {
-    @StateObject var viewModel = TotalStatsViewModel()
+    @StateObject var viewModel = CovidStatsViewModel()
     
     var body: some View {
         VStack {
             if viewModel.isLoading {
                 ProgressView()
                     .onAppear(perform: {
-                        viewModel.getData()
+                        viewModel.getTotalStatsData()
                     })
                     .progressViewStyle(CircularProgressViewStyle())
                     .scaleEffect(2)
