@@ -25,13 +25,19 @@ struct TotalStatsVC: View {
                 Spacer()
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 15) {
-                        ForEach(0 ..< viewModel.countriesData.count) { item in
-                            CountryCardView(countryData: viewModel.countriesData[item])
+                        ForEach(viewModel.countriesData, id: \.countryInfo._id) { country in
+                            CountryCardView(countryData: country)
                                 .cornerRadius(13)
                                 .shadow(color: .secondary, radius: 1, x: 1, y: 1)
+                                .onTapGesture {
+                                    viewModel.selectedCountry = country
+                                }
                         }
                     }
                     .padding(.leading, 8)
+                }
+                .sheet(isPresented: $viewModel.isShowingDetailView) {
+                    AboutCountryVC(countryData: viewModel.selectedCountry ?? MockData.countryModel)
                 }
             }
         }

@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct CountryListVC: View {
-    @State var countries    = [CountryModel]()
-    @State var searchText   = ""
-    @State var isSearching  = false
-    
+    @StateObject var viewModel  = CountryListViewModel()
+    @State var searchText       = ""
+    @State var isSearching      = false
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 0) {
+            VStack() {
                 OKSearchBar(searchText: $searchText, isSearching: $isSearching)
                     .padding(.vertical, 5)
                 Divider()
@@ -25,52 +24,33 @@ struct CountryListVC: View {
                 Section(header:
                             OKListRow(textOne: "Country", textTwo: "Cases", textThree: "Deaths", fontSize: 22, fontWeight: .bold, frameWidth: 130)
                 ) {
-                    if searchText.isEmpty {
-                        List {
-                            ForEach(countries, id: \.country) { item in
-                                ZStack {
-                                    OKListRow(textOne: item.country, textTwo: "\(item.cases.numberFormat())", textThree: "\(item.deaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)
-                                        .foregroundColor(Color(.secondaryLabel))
-                                    NavigationLink(destination: AboutCountryVC(countryData: item)) {
-                                        EmptyView()
+                    List {
+                        ForEach(searchText.isEmpty ? viewModel.countriesData : viewModel.countriesData.filter {
+                            $0.country.lowercased().contains(searchText.lowercased())
+                        }, id: \.country) { country in
+                            ZStack {
+                                OKListRow(textOne: country.country, textTwo: "\(country.cases.numberFormat())", textThree: "\(country.deaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)
+                                    .foregroundColor(Color(.secondaryLabel))
+                                    .onTapGesture {
+                                        viewModel.selectedCountry = country
                                     }
-                                }
                             }
-                            .listRowInsets(EdgeInsets())
                         }
-                    } else {
-                        List {
-                            ForEach(countries.filter {
-                                $0.country.lowercased().contains(searchText.lowercased())
-                            }, id: \.country) { item in
-                                NavigationLink(destination: AboutCountryVC(countryData: item)) {
-                                    OKListRow(textOne: item.country, textTwo: "\(item.cases.numberFormat())", textThree: "\(item.deaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)
-                                        .foregroundColor(Color(.secondaryLabel))
-                                }
-                                
-                            }
-                            .listRowInsets(EdgeInsets())
-                        }
+                        .listRowInsets(EdgeInsets())
                     }
-                    
                 }
                 .padding(.horizontal)
                 .onAppear(perform: {
                     UITableView.appearance().showsVerticalScrollIndicator = false
-                    getData()
+                    viewModel.getData()
                 })
             }
             .navigationBarTitle("Country List", displayMode: .inline)
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
-    }
-    
-    func getData() {
-        NetworkManager.shared.fetch(for: "", ifDaily: false) { (result: [CountryModel]) in
-            DispatchQueue.main.async {
-                self.countries = result
+            .sheet(isPresented: $viewModel.isShowingDetailView) {
+                AboutCountryVC(countryData: viewModel.selectedCountry ?? MockData.countryModel)
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

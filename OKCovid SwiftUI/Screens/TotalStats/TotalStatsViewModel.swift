@@ -9,8 +9,15 @@ import SwiftUI
 
 final class TotalStatsViewModel: ObservableObject {
     @Published var worldData: WorldModel?
-    @Published var countriesData: [CountryModel] = []
-    @Published var isLoading = true
+    @Published var countriesData: [CountryModel]    = []
+    @Published var isLoading                        = true
+    @Published var isShowingDetailView              = false
+    
+    var selectedCountry: CountryModel? {
+        didSet {
+            isShowingDetailView = true
+        }
+    }
     
     let countries = ["usa", "uk", "ita", "fr", "esp", "deu", "tr", "bel", "can", "au", "bra"]
     
@@ -23,7 +30,7 @@ final class TotalStatsViewModel: ObservableObject {
         
         for item in countries {
             NetworkManager.shared.fetch(for: item, ifDaily: false) { (result: CountryModel) in
-                DispatchQueue.main.async {
+                DispatchQueue.main.sync {
                     self.countriesData.append(result)
                     
                     if self.countriesData.count == self.countries.count {

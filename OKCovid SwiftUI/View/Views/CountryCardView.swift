@@ -9,10 +9,7 @@ import SwiftUI
 
 struct CountryCardView: View {
     var countryData: CountryModel
-    
-    @State private var presentVC: Bool = false
-    
-    
+
     var body: some View {
         ZStack {
             VStack() {
@@ -65,12 +62,6 @@ struct CountryCardView: View {
         }
         .frame(width: 340, height: 340, alignment: .center)
         .background(Color(.systemGray))
-        .onTapGesture {
-            self.presentVC = true
-        }
-        .sheet(isPresented: self.$presentVC) {
-            AboutCountryVC(countryData: countryData)
-        }
     }
     
     func statOfCases() -> String {
