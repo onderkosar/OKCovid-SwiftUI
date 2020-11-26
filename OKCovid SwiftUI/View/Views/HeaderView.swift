@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HeaderView: View {
-    var worldModel: WorldModel
+    var worldData: WorldModel
         
     var body: some View {
         VStack(spacing: 0) {
@@ -19,7 +19,7 @@ struct HeaderView: View {
             
             ZStack {
                 VStack(spacing: 20) {
-                    Text("Population: \(worldModel.population.numberFormat())")
+                    Text("Population: \(worldData.population.numberFormat())")
                         .font(.system(size: 17, design: .serif))
                         .fontWeight(.light)
                         .foregroundColor(Color(.lightText))
@@ -29,22 +29,22 @@ struct HeaderView: View {
                         .lineLimit(2)
                         .shadow(color: Color(.darkGray), radius: 1, x: 0.7, y: 0.7)
                     HStack {
-                        OKStatCard(title: "Cases", subTitle: "\(worldModel.cases.numberFormat())\n" + "\(((Double(worldModel.cases) * 100) / Double(worldModel.population)).rounded(by: 2))% of the population")
+                        OKStatCard(title: "Cases", subTitle: "\(worldData.cases.numberFormat())\n" + "\(((Double(worldData.cases) * 100) / Double(worldData.population)).rounded(by: 2))% of the population")
                             .padding(.leading, 5)
                         Spacer()
                         
-                        OKStatCard(title: "Deaths", subTitle: "\(worldModel.deaths.numberFormat())\n" + "\(((Double(worldModel.deaths) * 100) / Double(worldModel.cases)).rounded(by: 2))% of total cases")
+                        OKStatCard(title: "Deaths", subTitle: "\(worldData.deaths.numberFormat())\n" + "\(((Double(worldData.deaths) * 100) / Double(worldData.cases)).rounded(by: 2))% of total cases")
                         .padding(.trailing, 5)
                     }
                     .padding(.vertical, 5)
                     
                     HStack {
-                        OKStatCard(title: "Active", subTitle: "\(worldModel.active.numberFormat())\n" + "\(((Double(worldModel.active) * 100) / Double(worldModel.population)).rounded(by: 2))% of the population")
+                        OKStatCard(title: "Active", subTitle: "\(worldData.active.numberFormat())\n" + "\(((Double(worldData.active) * 100) / Double(worldData.population)).rounded(by: 2))% of the population")
                         .padding(.leading, 5)
                         
                         Spacer()
                         
-                        OKStatCard(title: "Recovered", subTitle: "\(worldModel.recovered.numberFormat())\n" + "\(((Double(worldModel.recovered) * 100) / Double(worldModel.cases)).rounded(by: 2))% of total cases")
+                        OKStatCard(title: "Recovered", subTitle: "\(worldData.recovered.numberFormat())\n" + "\(((Double(worldData.recovered) * 100) / Double(worldData.cases)).rounded(by: 2))% of total cases")
                         .padding(.trailing, 5)
                     }
                     .padding(.vertical, 5)
@@ -61,7 +61,7 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView(worldModel: WorldModel(population: 0, updated: 0, cases: 0, active: 0, deaths: 0, recovered: 0))
+        HeaderView(worldData: WorldModel(population: 0, cases: 0, active: 0, deaths: 0, recovered: 0))
             .previewLayout(.sizeThatFits)
             .preferredColorScheme(.dark)
     }

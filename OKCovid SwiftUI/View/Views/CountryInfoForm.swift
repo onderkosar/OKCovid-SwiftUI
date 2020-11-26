@@ -8,38 +8,38 @@
 import SwiftUI
 
 struct CountryInfoForm: View {
-    var countryModel: CountryModel
+    var countryData: CountryModel
     
     var body: some View {
         Form {
-            Section(header: Text(countryModel.updatedLblText)) {
+            Section(header: Text(countryData.updatedLblText)) {
                 HStack {
                     Image(systemName: "person.2")
                         .frame(width: 20, height: 20, alignment: .center)
                     Text("Population").foregroundColor(Color.gray)
                     Spacer()
-                    Text(countryModel.population.numberFormat())
+                    Text(countryData.population.numberFormat())
                 }
                 HStack {
                     Image(systemName: "eyedropper.halffull")
                         .frame(width: 20, height: 20, alignment: .center)
                     Text("Tests").foregroundColor(Color.gray)
                     Spacer()
-                    Text(countryModel.tests.numberFormat())
+                    Text(countryData.tests.numberFormat())
                 }
                 HStack {
                     Image(systemName: "thermometer")
                         .frame(width: 20, height: 20, alignment: .center)
                     Text("Cases").foregroundColor(Color.gray)
                     Spacer()
-                    Text(countryModel.cases.numberFormat())
+                    Text(countryData.cases.numberFormat())
                 }
                 HStack {
                     Image(systemName: "heart.slash")
                         .frame(width: 20, height: 20, alignment: .center)
                     Text("Deaths").foregroundColor(Color.gray)
                     Spacer()
-                    Text(countryModel.deaths.numberFormat())
+                    Text(countryData.deaths.numberFormat())
                 }
             }
         }
@@ -50,7 +50,7 @@ struct CountryInfoForm: View {
 
 struct CountryInfoForm_Previews: PreviewProvider {
     static var previews: some View {
-        CountryInfoForm(countryModel: MockData.countryModel)
+        CountryInfoForm(countryData: MockData.countryModel)
             .previewLayout(.sizeThatFits)
             .colorScheme(.dark)
     }

@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct InsetMapView: View {
-    var countryModel: CountryModel
+    var countryData: CountryModel
     
     @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.8333, longitude: 12.8333), span: MKCoordinateSpan(latitudeDelta: 10.0, longitudeDelta: 10.0))
     
@@ -18,7 +18,7 @@ struct InsetMapView: View {
             .overlay(
                 NavigationLink(destination: MapView()) {
                     HStack {
-                        Image(countryModel.country.lowercased().replaceSpace(with: "-"))
+                        Image(countryData.country.lowercased().replaceSpace(with: "-"))
                             .resizable()
                             .scaledToFit()
                             .frame(width: 55, height: 55)
@@ -42,7 +42,7 @@ struct InsetMapView: View {
 
 struct InsetMapView_Previews: PreviewProvider {
     static var previews: some View {
-        InsetMapView(countryModel: MockData.countryModel)
+        InsetMapView(countryData: MockData.countryModel)
             .previewLayout(.sizeThatFits)
             .colorScheme(.dark)
     }

@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct CountryCardView: View {
-    var countryModel: CountryModel
-    var countryIso: String
+    var countryData: CountryModel
     
     @State private var presentVC: Bool = false
     
@@ -18,13 +17,13 @@ struct CountryCardView: View {
         ZStack {
             VStack() {
                 HStack {
-                    Image(countryIso)
+                    Image(countryData.country.lowercased())
                         .resizable()
                         .frame(width: 130, height: 130, alignment: .center)
                         .shadow(color: Color(.darkGray), radius: 1, x: 2, y: 2)
                     Spacer()
                     VStack {
-                        Text(countryModel.countryName)
+                        Text(countryData.countryName)
                             .font(.system(.title2, design: .serif))
                             .fontWeight(.bold)
                             .foregroundColor(Color(.darkText))
@@ -33,7 +32,7 @@ struct CountryCardView: View {
                             .multilineTextAlignment(.center)
                             .lineLimit(2)
                             .shadow(color: Color(.darkGray), radius: 1, x: 0.7, y: 0.7)
-                        Text("Population\n" + "\(countryModel.population.numberFormat())")
+                        Text("Population\n" + "\(countryData.population.numberFormat())")
                             .font(.system(size: 17, design: .serif))
                             .fontWeight(.light)
                             .foregroundColor(Color(.lightText))
@@ -70,46 +69,46 @@ struct CountryCardView: View {
             self.presentVC = true
         }
         .sheet(isPresented: self.$presentVC) {
-            AboutCountryVC(countryModel: countryModel)
+            AboutCountryVC(countryData: countryData)
         }
     }
     
     func statOfCases() -> String {
-        if countryModel.cases == 0 {
+        if countryData.cases == 0 {
             return "N/A\n"
         } else {
-            return "\(countryModel.cases.numberFormat())\n" + "\(((Double(countryModel.cases) * 100) / Double(countryModel.population)).rounded(by: 2))% of the population"
+            return "\(countryData.cases.numberFormat())\n" + "\(((Double(countryData.cases) * 100) / Double(countryData.population)).rounded(by: 2))% of the population"
         }
     }
     
     func statOfDeaths() -> String {
-        if countryModel.deaths == 0 {
+        if countryData.deaths == 0 {
             return "N/A\n"
         } else {
-            return "\(countryModel.deaths.numberFormat())\n" + "\(((Double(countryModel.deaths) * 100) / Double(countryModel.cases)).rounded(by: 2))% of total cases"
+            return "\(countryData.deaths.numberFormat())\n" + "\(((Double(countryData.deaths) * 100) / Double(countryData.cases)).rounded(by: 2))% of total cases"
         }
     }
     
     func statOfActive() -> String {
-        if countryModel.recovered == 0 {
+        if countryData.recovered == 0 {
             return "N/A\n"
         } else {
-            return "\(countryModel.active.numberFormat())\n" + "\(((Double(countryModel.active) * 100) / Double(countryModel.population)).rounded(by: 2))% of the population"
+            return "\(countryData.active.numberFormat())\n" + "\(((Double(countryData.active) * 100) / Double(countryData.population)).rounded(by: 2))% of the population"
         }
     }
     
     func statOfRocovered() -> String {
-        if countryModel.recovered == 0 {
+        if countryData.recovered == 0 {
             return "N/A\n"
         } else {
-            return "\(countryModel.recovered.numberFormat())\n" + "\(((Double(countryModel.recovered) * 100) / Double(countryModel.cases)).rounded(by: 2))% of total cases"
+            return "\(countryData.recovered.numberFormat())\n" + "\(((Double(countryData.recovered) * 100) / Double(countryData.cases)).rounded(by: 2))% of total cases"
         }
     }
 }
 
 struct CountryCardView_Previews: PreviewProvider {
     static var previews: some View {
-        CountryCardView(countryModel: MockData.countryModel, countryIso: "usa")
+        CountryCardView(countryData: MockData.countryModel)
             .previewLayout(.sizeThatFits)
             .colorScheme(.dark)
     }

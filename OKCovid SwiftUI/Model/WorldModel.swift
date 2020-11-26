@@ -9,7 +9,6 @@ import Foundation
 
 struct WorldModel: Codable, Hashable {
     let population : Int
-    let updated : Int
     let cases : Int
     let active : Int
     let deaths : Int

@@ -8,6 +8,12 @@
 import Foundation
 
 struct MockData {
+    static let worldModel       = WorldModel(population: 7787962770,
+                                             cases: 56342420,
+                                             active: 15778135,
+                                             deaths: 1350973,
+                                             recovered: 39213312)
+    
     static let countryInfo      = CountryInfo(_id: 840,
                                               flag: "https://disease.sh/assets/img/flags/us.png",
                                               iso2: "US",
@@ -24,11 +30,4 @@ struct MockData {
                                                active: 4389449,
                                                deaths: 255112,
                                                recovered: 7114110)
-    
-    static let worldModel       = WorldModel(population: 7787962770,
-                                             updated: 1605727532039,
-                                             cases: 56342420,
-                                             active: 15778135,
-                                             deaths: 1350973,
-                                             recovered: 39213312)
 }

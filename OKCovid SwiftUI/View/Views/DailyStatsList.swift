@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DailyStatsList: View {
-    @State var dailyModel = [DailyModel]()
+    @State var dailyData = [DailyModel]()
     @State var country: String
     
     var body: some View {
@@ -28,7 +28,7 @@ struct DailyStatsList: View {
                         OKListRow(textOne: "Date", textTwo: "Cases", textThree: "Deaths", fontSize: 22, fontWeight: .bold, frameWidth: 130)
             ) {
                 List {
-                    ForEach(dailyModel, id: \.uuid) { item in
+                    ForEach(dailyData, id: \.uuid) { item in
                         OKListRow(textOne: "\(item.dDate.convertToMonthYearFormat())", textTwo: "\(item.dCases.numberFormat())", textThree: "\(item.dDeaths.numberFormat())", fontSize: 18, fontWeight: .medium, frameWidth: 130)
                             .foregroundColor(Color(.secondaryLabel))
                     }
@@ -75,16 +75,16 @@ struct DailyStatsList: View {
     
     func updateArray(with timelineData: TimelineData) {
         for i in 1...timelineData.casesTimeline.count - 1 {
-            self.dailyModel.append(.init(dDate: timelineData.casesTimeline[i].key, dCases: timelineData.casesTimeline[i].value - timelineData.casesTimeline[i-1].value, dDeaths: timelineData.deathsTimeline[i].value - timelineData.deathsTimeline[i-1].value))
+            self.dailyData.append(.init(dDate: timelineData.casesTimeline[i].key, dCases: timelineData.casesTimeline[i].value - timelineData.casesTimeline[i-1].value, dDeaths: timelineData.deathsTimeline[i].value - timelineData.deathsTimeline[i-1].value))
         }
         
         var reversedNames   = [DailyModel]()
 
-        for name in dailyModel {
+        for name in dailyData {
             reversedNames.insert(name, at: 0)
         }
         
-        self.dailyModel     = reversedNames
+        self.dailyData     = reversedNames
     }
 }
 

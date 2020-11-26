@@ -18,11 +18,11 @@ struct MapView: View {
         return mapRegion
     }()
     
-    @State private var countriesModel: [CountryModel]       = []
-    @State private var anotationsModel: [AnotationModel]    = []
+    @State private var countriesData: [CountryModel]       = []
+    @State private var anotationsData: [AnotationModel]    = []
     
     var body: some View {
-        Map(coordinateRegion: $region, annotationItems: anotationsModel, annotationContent: { country in
+        Map(coordinateRegion: $region, annotationItems: anotationsData, annotationContent: { country in
             MapAnnotation(coordinate: country.location) {
                 OKAnnotation(countryName: country.name.lowercased(), cases: country.cases, deaths: country.deaths)
             }
@@ -35,11 +35,11 @@ struct MapView: View {
     func getData() {
         NetworkManager.shared.fetch(for: "", ifDaily: false) { (result: [CountryModel]) in
             DispatchQueue.main.async {
-                self.countriesModel = result
+                self.countriesData = result
                 
-                for item in countriesModel {
+                for item in countriesData {
                     if item.cases > 1000 {
-                        anotationsModel.append(AnotationModel(name: item.country, latitude: item.countryInfo.lat ?? 0, longitude: item.countryInfo.long ?? 0, cases: item.cases, deaths: item.deaths))
+                        anotationsData.append(AnotationModel(name: item.country, latitude: item.countryInfo.lat ?? 0, longitude: item.countryInfo.long ?? 0, cases: item.cases, deaths: item.deaths))
                     }
                 }
             }
