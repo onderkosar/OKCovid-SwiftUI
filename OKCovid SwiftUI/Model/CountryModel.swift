@@ -20,7 +20,7 @@ struct CountryModel: Codable, Hashable {
     let recovered : Int
     
     // MARK: - Country Model Computed Properties
-    var countryName:String {
+    var countryName: String {
         var fullName = ""
         if country == "USA" {
             fullName = "United States of America"

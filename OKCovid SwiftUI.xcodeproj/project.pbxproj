@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		950EA38D257182DC0047D0F0 /* OKXMarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA38C257182DC0047D0F0 /* OKXMarkButton.swift */; };
+		950EA39025718C0C0047D0F0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA38F25718C0C0047D0F0 /* MapViewModel.swift */; };
 		950FF1F52542E210002323FD /* WorldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FF1F42542E210002323FD /* WorldModel.swift */; };
 		950FF1F82542E4CD002323FD /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FF1F72542E4CD002323FD /* CountryModel.swift */; };
 		950FF1FE2542E715002323FD /* TimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FF1FD2542E715002323FD /* TimelineModel.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		950EA38C257182DC0047D0F0 /* OKXMarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKXMarkButton.swift; sourceTree = "<group>"; };
+		950EA38F25718C0C0047D0F0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		950FF1F42542E210002323FD /* WorldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldModel.swift; sourceTree = "<group>"; };
 		950FF1F72542E4CD002323FD /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		950FF1FD2542E715002323FD /* TimelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineModel.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				955F2E4E2570449600E837F3 /* CovidStatsViewModel.swift */,
+				950EA38F25718C0C0047D0F0 /* MapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				95BB427B25422C8B00EAFA87 /* OKStatCard.swift in Sources */,
 				950FF1F82542E4CD002323FD /* CountryModel.swift in Sources */,
 				950FF1FE2542E715002323FD /* TimelineModel.swift in Sources */,
+				950EA39025718C0C0047D0F0 /* MapViewModel.swift in Sources */,
 				95BB4277254224A300EAFA87 /* HeaderView.swift in Sources */,
 				95ED4F4F2544A67D002C8D9D /* CountryListVC.swift in Sources */,
 				9539BBA225588944001D00CC /* DailyStatsList.swift in Sources */,

@@ -56,3 +56,11 @@ struct OKSearchBar: View {
         }
     }
 }
+
+struct OKSearchBar_Previews: PreviewProvider {
+    static var previews: some View {
+        OKSearchBar(searchText: .constant(""), isSearching: .constant(true))
+            .colorScheme(.dark)
+            .previewLayout(.sizeThatFits)
+    }
+}
