@@ -24,7 +24,7 @@ struct InsetMapView: View {
                             .frame(width: 55, height: 55)
                             .clipShape(Circle())
                             .shadow(color: Color(.black), radius: 2, x: 2, y: 2)
-                    } //: HSTACK
+                    }
                     .padding(.vertical, 3)
                     .padding(.horizontal, 3)
                     .background(
@@ -32,7 +32,7 @@ struct InsetMapView: View {
                             .opacity(0.6)
                             .cornerRadius(8)
                     )
-                } //: NAVIGATION
+                }
                 .padding(12), alignment: .topTrailing
             )
             .frame(height: 256)
@@ -42,7 +42,7 @@ struct InsetMapView: View {
 
 struct InsetMapView_Previews: PreviewProvider {
     static var previews: some View {
-        InsetMapView(countryData: MockData.countryModel)
+        InsetMapView(countryData: MockData.sampleCountryData)
             .previewLayout(.sizeThatFits)
             .colorScheme(.dark)
     }

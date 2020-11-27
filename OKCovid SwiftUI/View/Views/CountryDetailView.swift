@@ -1,16 +1,15 @@
 //
-//  DailyStatsVC.swift
+//  CountryDetailView.swift
 //  OKCovid SwiftUI
 //
-//  Created by Önder Koşar on 25.10.2020.
+//  Created by Önder Koşar on 27.11.2020.
 //
 
 import SwiftUI
 import MapKit
 
-struct AboutCountryVC: View {
+struct CountryDetailView: View {
     @State var countryData: CountryModel
-    
     
     var body: some View {
         NavigationView {
@@ -38,9 +37,9 @@ struct AboutCountryVC: View {
     }
 }
 
-struct AboutCountryVC_Previews: PreviewProvider {
+struct CountryDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        AboutCountryVC(countryData: MockData.countryModel)
+        CountryDetailView(countryData: MockData.sampleCountryData)
             .colorScheme(.dark)
     }
 }

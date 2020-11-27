@@ -25,20 +25,15 @@ struct CountryCardView: View {
                             .fontWeight(.bold)
                             .foregroundColor(Color(.darkText))
                             .padding(5)
-                            .padding(.trailing, 15)
-                            .multilineTextAlignment(.center)
-                            .lineLimit(2)
-                            .shadow(color: Color(.darkGray), radius: 1, x: 0.7, y: 0.7)
                         Text("Population\n" + "\(countryData.population.numberFormat())")
                             .font(.system(size: 17, design: .serif))
                             .fontWeight(.light)
-                            .foregroundColor(Color(.lightText))
-                            .padding(.trailing, 15)
-                            .multilineTextAlignment(.center)
-                            .lineLimit(2)
-                            .shadow(color: Color(.darkGray), radius: 1, x: 0.7, y: 0.7)
-                        
+                            .foregroundColor(Color(.label))
                     }
+                    .shadow(color: Color(.darkGray), radius: 0.5, x: 0.3, y: 0.3)
+                    .padding(.trailing, 15)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
                 }
                 .padding(.horizontal, 8)
                 VStack(alignment: .center, spacing: 20) {
@@ -62,6 +57,7 @@ struct CountryCardView: View {
         }
         .frame(width: 340, height: 340, alignment: .center)
         .background(Color(.systemGray))
+        .cornerRadius(13)
     }
     
     func statOfCases() -> String {
@@ -99,7 +95,7 @@ struct CountryCardView: View {
 
 struct CountryCardView_Previews: PreviewProvider {
     static var previews: some View {
-        CountryCardView(countryData: MockData.countryModel)
+        CountryCardView(countryData: MockData.sampleCountryData)
             .previewLayout(.sizeThatFits)
             .colorScheme(.dark)
     }

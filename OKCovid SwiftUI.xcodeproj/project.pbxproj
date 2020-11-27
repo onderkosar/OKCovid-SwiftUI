@@ -13,6 +13,7 @@
 		950FF2032542F485002323FD /* CountryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FF2022542F485002323FD /* CountryCardView.swift */; };
 		950FF208254303F6002323FD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FF207254303F6002323FD /* NetworkManager.swift */; };
 		950FF20D25430446002323FD /* DataType+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FF20C25430446002323FD /* DataType+Ext.swift */; };
+		9511ACDD2571588B002B976D /* CountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9511ACDC2571588B002B976D /* CountryDetailView.swift */; };
 		9539BB9D25587248001D00CC /* CountryInfoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539BB9C25587248001D00CC /* CountryInfoForm.swift */; };
 		9539BBA225588944001D00CC /* DailyStatsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539BBA125588944001D00CC /* DailyStatsList.swift */; };
 		954CDF0F2541E02300969C0A /* OKCovid_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CDF0E2541E02300969C0A /* OKCovid_SwiftUIApp.swift */; };
@@ -23,7 +24,6 @@
 		954CDF452541F6D000969C0A /* MapStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CDF442541F6D000969C0A /* MapStatsVC.swift */; };
 		955F2E4F2570449600E837F3 /* CovidStatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955F2E4E2570449600E837F3 /* CovidStatsViewModel.swift */; };
 		956C2F04254595B7004BEC41 /* OKListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C2F03254595B7004BEC41 /* OKListRow.swift */; };
-		956C2F0725459A67004BEC41 /* AboutCountryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C2F0625459A67004BEC41 /* AboutCountryVC.swift */; };
 		957D1FE92558207C004BBCA4 /* InsetMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D1FE82558207C004BBCA4 /* InsetMapView.swift */; };
 		95BB4277254224A300EAFA87 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB4276254224A300EAFA87 /* HeaderView.swift */; };
 		95BB427B25422C8B00EAFA87 /* OKStatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB427A25422C8B00EAFA87 /* OKStatCard.swift */; };
@@ -41,6 +41,7 @@
 		950FF2022542F485002323FD /* CountryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCardView.swift; sourceTree = "<group>"; };
 		950FF207254303F6002323FD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		950FF20C25430446002323FD /* DataType+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataType+Ext.swift"; sourceTree = "<group>"; };
+		9511ACDC2571588B002B976D /* CountryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailView.swift; sourceTree = "<group>"; };
 		9539BB9C25587248001D00CC /* CountryInfoForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoForm.swift; sourceTree = "<group>"; };
 		9539BBA125588944001D00CC /* DailyStatsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStatsList.swift; sourceTree = "<group>"; };
 		954CDF0B2541E02300969C0A /* OKCovid SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OKCovid SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,7 +54,6 @@
 		954CDF442541F6D000969C0A /* MapStatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStatsVC.swift; sourceTree = "<group>"; };
 		955F2E4E2570449600E837F3 /* CovidStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidStatsViewModel.swift; sourceTree = "<group>"; };
 		956C2F03254595B7004BEC41 /* OKListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKListRow.swift; sourceTree = "<group>"; };
-		956C2F0625459A67004BEC41 /* AboutCountryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCountryVC.swift; sourceTree = "<group>"; };
 		957D1FE82558207C004BBCA4 /* InsetMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetMapView.swift; sourceTree = "<group>"; };
 		95BB4276254224A300EAFA87 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		95BB427A25422C8B00EAFA87 /* OKStatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKStatCard.swift; sourceTree = "<group>"; };
@@ -110,11 +110,11 @@
 		954CDF0D2541E02300969C0A /* OKCovid SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				95AE7FCF2570641C006C2067 /* ViewModel */,
 				950FF20B25430434002323FD /* Extensions */,
 				950FF206254303DD002323FD /* NetworkManager */,
 				954CDF3D2541F4E300969C0A /* Model */,
 				954CDF3C2541F4DD00969C0A /* View */,
+				95AE7FCF2570641C006C2067 /* ViewModel */,
 				955F2E3E2570429300E837F3 /* Screens */,
 				954CDF372541F43000969C0A /* Support */,
 				954CDF172541E02800969C0A /* Info.plist */,
@@ -145,7 +145,6 @@
 			children = (
 				956C2F0C2545FB63004BEC41 /* Items */,
 				956C2F162545FCA8004BEC41 /* Views */,
-				956C2F152545FC93004BEC41 /* ViewControllers */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,14 +206,6 @@
 			path = Items;
 			sourceTree = "<group>";
 		};
-		956C2F152545FC93004BEC41 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				956C2F0625459A67004BEC41 /* AboutCountryVC.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
 		956C2F162545FCA8004BEC41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +215,7 @@
 				957D1FE82558207C004BBCA4 /* InsetMapView.swift */,
 				9539BB9C25587248001D00CC /* CountryInfoForm.swift */,
 				9539BBA125588944001D00CC /* DailyStatsList.swift */,
+				9511ACDC2571588B002B976D /* CountryDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,7 +309,7 @@
 				95DBF9262565AF92007D73CE /* MockData.swift in Sources */,
 				9539BB9D25587248001D00CC /* CountryInfoForm.swift in Sources */,
 				95C7E62B2544498F008E9459 /* MapView.swift in Sources */,
-				956C2F0725459A67004BEC41 /* AboutCountryVC.swift in Sources */,
+				9511ACDD2571588B002B976D /* CountryDetailView.swift in Sources */,
 				950FF1F52542E210002323FD /* WorldModel.swift in Sources */,
 				954CDF452541F6D000969C0A /* MapStatsVC.swift in Sources */,
 				954CDF112541E02300969C0A /* ContentView.swift in Sources */,

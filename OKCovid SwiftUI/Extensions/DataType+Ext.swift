@@ -43,8 +43,9 @@ extension Double {
     }
     
     func getDateFromTimeStamp() -> String {
-        let dateFromServer = NSDate(timeIntervalSince1970: self)
-        let dateFormatter = DateFormatter()
+        let dateFromServer  = NSDate(timeIntervalSince1970: self)
+        let dateFormatter   = DateFormatter()
+        
         dateFormatter.doesRelativeDateFormatting = true
         dateFormatter.timeStyle = .short
         dateFormatter.dateStyle = .short

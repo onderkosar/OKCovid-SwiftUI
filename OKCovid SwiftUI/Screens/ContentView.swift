@@ -25,7 +25,7 @@ struct ContentView: View {
                     Image(systemName: "list.dash")
                     Text("Countries")
                 })
-        } //: TABVIEW
+        }
         .edgesIgnoringSafeArea(.top)
         .accentColor(Color.primary)
     }

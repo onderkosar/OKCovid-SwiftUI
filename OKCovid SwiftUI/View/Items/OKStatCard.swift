@@ -24,7 +24,7 @@ struct OKStatCard: View {
                 .lineLimit(2)
                 .multilineTextAlignment(.center)
                 .shadow(radius: 3)
-        } //: VSTACK
+        }
         .frame(width: 160, height: 80)
         .background(Color(.systemGray3))
         .cornerRadius(8)

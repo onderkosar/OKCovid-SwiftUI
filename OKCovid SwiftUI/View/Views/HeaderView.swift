@@ -22,12 +22,9 @@ struct HeaderView: View {
                     Text("Population: \(worldData.population.numberFormat())")
                         .font(.system(size: 17, design: .serif))
                         .fontWeight(.light)
-                        .foregroundColor(Color(.lightText))
-                        .padding(.top, 5)
-                        .padding(.trailing, 15)
-                        .multilineTextAlignment(.center)
-                        .lineLimit(2)
                         .shadow(color: Color(.darkGray), radius: 1, x: 0.7, y: 0.7)
+                        .foregroundColor(Color(.label))
+                        .padding(.top, 5)
                     HStack {
                         OKStatCard(title: "Cases", subTitle: "\(worldData.cases.numberFormat())\n" + "\(((Double(worldData.cases) * 100) / Double(worldData.population)).rounded(by: 2))% of the population")
                             .padding(.leading, 5)
@@ -55,7 +52,6 @@ struct HeaderView: View {
             .cornerRadius(9)
             .padding(.horizontal, 8)
         }
-        .shadow(color: .secondary, radius: 1, x: 1, y: 1)
     }
 }
 

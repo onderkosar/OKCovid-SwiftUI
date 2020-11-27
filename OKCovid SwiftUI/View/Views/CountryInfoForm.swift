@@ -50,7 +50,7 @@ struct CountryInfoForm: View {
 
 struct CountryInfoForm_Previews: PreviewProvider {
     static var previews: some View {
-        CountryInfoForm(countryData: MockData.countryModel)
+        CountryInfoForm(countryData: MockData.sampleCountryData)
             .previewLayout(.sizeThatFits)
             .colorScheme(.dark)
     }

@@ -45,32 +45,25 @@ struct OKAnnotation: View {
                 HStack(alignment: .top , spacing: 0) {
                     Text("Cases")
                         .frame(width: 50, height: 20, alignment: .leading)
-                        .font(.system(size: 13, weight: .bold, design: .serif))
-                        .foregroundColor(Color.black)
                         .padding(.leading, 2)
                     Text("\(cases.numberFormat())")
                         .frame(width: 66, height: 20, alignment: .trailing)
-                        .font(.system(size: 12, weight: .bold, design: .serif))
-                        .foregroundColor(Color.black)
                         .padding(.trailing, 2)
                 }
                 HStack(alignment: .top , spacing: 0) {
                     Text("Deaths")
                         .frame(width: 50, height: 20, alignment: .leading)
-                        .font(.system(size: 13, weight: .bold, design: .serif))
-                        .foregroundColor(Color.black)
                         .padding(.leading, 2)
                     Text("\(deaths.numberFormat())")
                         .frame(width: 66, height: 20, alignment: .trailing)
-                        .font(.system(size: 12, weight: .bold, design: .serif))
-                        .foregroundColor(Color.black)
                         .padding(.trailing, 2)
                 }
             }
+            .font(.system(size: 13, weight: .bold, design: .serif))
+            .shadow(color: Color(.black), radius: 0.3, x: 0.2, y: 0.2)
+            .foregroundColor(Color.black)
             .background(Color(.systemGray)).opacity(0.8)
             .cornerRadius(4)
-            .shadow(color: Color(.black), radius: 2, x: 2, y: 2)
-            
         }
         .frame(width: 118, height: 80)
     }
