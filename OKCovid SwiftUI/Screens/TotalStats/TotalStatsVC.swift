@@ -20,25 +20,27 @@ struct TotalStatsVC: View {
                     .progressViewStyle(CircularProgressViewStyle())
                     .scaleEffect(1.5)
             } else {
+                Spacer()
                 HeaderView(worldData: viewModel.worldData ?? MockData.sampleWorldData)
                     .frame(maxWidth: 500)
                 Spacer()
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 15) {
+                    HStack(alignment: .top, spacing: 15) {
                         ForEach(viewModel.countriesData, id: \.countryInfo._id) { country in
                             CountryCardView(countryData: country)
-                                .padding()
                                 .onTapGesture {
                                     viewModel.selectedCountry = country
                                 }
                         }
                     }
+                    .padding(.leading, 15)
                 }
                 .sheet(isPresented: $viewModel.isShowingDetailView) {
                     CountryDetailView(countryData: viewModel.selectedCountry ?? MockData.sampleCountryData, isShowingDetail: $viewModel.isShowingDetailView)
                 }
             }
         }
+        .blur(radius: viewModel.isShowingDetailView ? 5 : 0)
     }
 }
 

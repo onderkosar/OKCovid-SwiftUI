@@ -51,6 +51,7 @@ struct CountryListVC: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .blur(radius: viewModel.isShowingDetailView ? 5 : 0)
     }
 }
 
