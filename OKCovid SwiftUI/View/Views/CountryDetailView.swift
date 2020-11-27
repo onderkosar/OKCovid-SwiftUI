@@ -10,6 +10,7 @@ import MapKit
 
 struct CountryDetailView: View {
     @State var countryData: CountryModel
+    @Binding var isShowingDetail: Bool
     
     var body: some View {
         NavigationView {
@@ -32,6 +33,10 @@ struct CountryDetailView: View {
             }
             .padding(0)
             .navigationBarTitle("About " + countryData.country, displayMode: .inline)
+            .navigationBarItems(trailing: OKXMarkButton()
+                                    .onTapGesture {
+                                        isShowingDetail = false
+                                    })
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
@@ -39,7 +44,7 @@ struct CountryDetailView: View {
 
 struct CountryDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CountryDetailView(countryData: MockData.sampleCountryData)
+        CountryDetailView(countryData: MockData.sampleCountryData, isShowingDetail: .constant(true))
             .colorScheme(.dark)
     }
 }

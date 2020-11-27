@@ -47,7 +47,7 @@ struct CountryListVC: View {
             }
             .navigationBarTitle("Country List", displayMode: .inline)
             .sheet(isPresented: $viewModel.isShowingDetailView) {
-                CountryDetailView(countryData: viewModel.selectedCountry ?? MockData.sampleCountryData)
+                CountryDetailView(countryData: viewModel.selectedCountry ?? MockData.sampleCountryData, isShowingDetail: $viewModel.isShowingDetailView)
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())

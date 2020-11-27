@@ -38,17 +38,17 @@ struct CountryCardView: View {
                 .padding(.horizontal, 8)
                 VStack(alignment: .center, spacing: 20) {
                     HStack() {
-                        OKStatCard(title: "Cases", subTitle: statOfCases())
+                        OKStatCard(title: "Cases", subTitle: countryData.statOfCases)
                             .padding(.leading, 5)
                         Spacer()
-                        OKStatCard(title: "Deaths", subTitle: statOfDeaths())
+                        OKStatCard(title: "Deaths", subTitle: countryData.statOfDeaths)
                             .padding(.trailing, 5)
                     }
                     HStack() {
-                        OKStatCard(title: "Active", subTitle: statOfActive())
+                        OKStatCard(title: "Active", subTitle: countryData.statOfActive)
                             .padding(.leading, 5)
                         Spacer()
-                        OKStatCard(title: "Recovered", subTitle: statOfRocovered())
+                        OKStatCard(title: "Recovered", subTitle: countryData.statOfRocovered)
                             .padding(.trailing, 5)
                     }
                 }
@@ -58,38 +58,6 @@ struct CountryCardView: View {
         .frame(width: 340, height: 340, alignment: .center)
         .background(Color(.systemGray))
         .cornerRadius(13)
-    }
-    
-    func statOfCases() -> String {
-        if countryData.cases == 0 {
-            return "N/A\n"
-        } else {
-            return "\(countryData.cases.numberFormat())\n" + "\(((Double(countryData.cases) * 100) / Double(countryData.population)).rounded(by: 2))% of the population"
-        }
-    }
-    
-    func statOfDeaths() -> String {
-        if countryData.deaths == 0 {
-            return "N/A\n"
-        } else {
-            return "\(countryData.deaths.numberFormat())\n" + "\(((Double(countryData.deaths) * 100) / Double(countryData.cases)).rounded(by: 2))% of total cases"
-        }
-    }
-    
-    func statOfActive() -> String {
-        if countryData.recovered == 0 {
-            return "N/A\n"
-        } else {
-            return "\(countryData.active.numberFormat())\n" + "\(((Double(countryData.active) * 100) / Double(countryData.population)).rounded(by: 2))% of the population"
-        }
-    }
-    
-    func statOfRocovered() -> String {
-        if countryData.recovered == 0 {
-            return "N/A\n"
-        } else {
-            return "\(countryData.recovered.numberFormat())\n" + "\(((Double(countryData.recovered) * 100) / Double(countryData.cases)).rounded(by: 2))% of total cases"
-        }
     }
 }
 
