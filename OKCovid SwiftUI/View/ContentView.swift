@@ -10,17 +10,17 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            TotalStatsVC()
+            TotalStatsView()
                 .tabItem({
                     Image(systemName: "person.3.fill")
                     Text("Total Stats")
                 })
-            MapStatsVC()
+            WorldMapView()
                 .tabItem({
                     Image(systemName: "map.fill")
                     Text("Map")
                 })
-            CountryListVC()
+            CountryListView()
                 .tabItem({
                     Image(systemName: "list.dash")
                     Text("Countries")

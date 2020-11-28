@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class CovidStatsViewModel: ObservableObject {
+final class StatsViewModel: ObservableObject {
     @Published var worldData: WorldModel?
     @Published var countriesData: [CountryModel]    = []
     @Published var isLoading                        = true

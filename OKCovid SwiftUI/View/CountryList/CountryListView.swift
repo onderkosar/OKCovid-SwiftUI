@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct CountryListVC: View {
-    @StateObject var viewModel  = CovidStatsViewModel()
+struct CountryListView: View {
+    @StateObject var viewModel  = StatsViewModel()
     @State var searchText       = ""
     @State var isSearching      = false
     
@@ -57,6 +57,6 @@ struct CountryListVC: View {
 
 struct CountryListVC_Previews: PreviewProvider {
     static var previews: some View {
-        CountryListVC()
+        CountryListView()
     }
 }

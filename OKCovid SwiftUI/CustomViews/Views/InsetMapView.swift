@@ -16,7 +16,7 @@ struct InsetMapView: View {
     var body: some View {
         Map(coordinateRegion: $region)
             .overlay(
-                NavigationLink(destination: MapView()) {
+                ZStack() {
                     HStack {
                         Image(countryData.country.lowercased().replaceSpace(with: "-"))
                             .resizable()

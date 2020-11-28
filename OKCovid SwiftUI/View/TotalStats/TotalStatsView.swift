@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct TotalStatsVC: View {
-    @StateObject var viewModel = CovidStatsViewModel()
+struct TotalStatsView: View {
+    @StateObject var viewModel = StatsViewModel()
     
     var body: some View {
         VStack {
@@ -46,7 +46,7 @@ struct TotalStatsVC: View {
 
 struct TotalStatsVC_Previews: PreviewProvider {
     static var previews: some View {
-        TotalStatsVC()
+        TotalStatsView()
             .preferredColorScheme(.dark)
     }
 }
