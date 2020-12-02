@@ -25,24 +25,21 @@ struct HeaderView: View {
                         .shadow(color: Color(.darkGray), radius: 1, x: 0.7, y: 0.7)
                         .foregroundColor(Color(.label))
                         .padding(.top, 5)
-                    HStack {
-                        OKStatCard(title: "Cases", subTitle: "\(worldData.cases.numberFormat())\n" + "\(((Double(worldData.cases) * 100) / Double(worldData.population)).rounded(by: 2))% of the population")
-                            .padding(.leading, 5)
-                        Spacer()
-                        
-                        OKStatCard(title: "Deaths", subTitle: "\(worldData.deaths.numberFormat())\n" + "\(((Double(worldData.deaths) * 100) / Double(worldData.cases)).rounded(by: 2))% of total cases")
-                        .padding(.trailing, 5)
-                    }
-                    .padding(.vertical, 5)
-                    
-                    HStack {
-                        OKStatCard(title: "Active", subTitle: "\(worldData.active.numberFormat())\n" + "\(((Double(worldData.active) * 100) / Double(worldData.population)).rounded(by: 2))% of the population")
-                        .padding(.leading, 5)
-                        
-                        Spacer()
-                        
-                        OKStatCard(title: "Recovered", subTitle: "\(worldData.recovered.numberFormat())\n" + "\(((Double(worldData.recovered) * 100) / Double(worldData.cases)).rounded(by: 2))% of total cases")
-                        .padding(.trailing, 5)
+                    VStack(alignment: .center, spacing: 20) {
+                        HStack() {
+                            OKStatCard(title: "Cases", subTitle: worldData.statOfCases)
+                                .padding(.leading, 5)
+                            Spacer()
+                            OKStatCard(title: "Deaths", subTitle: worldData.statOfDeaths)
+                                .padding(.trailing, 5)
+                        }
+                        HStack() {
+                            OKStatCard(title: "Active", subTitle: worldData.statOfActive)
+                                .padding(.leading, 5)
+                            Spacer()
+                            OKStatCard(title: "Recovered", subTitle: worldData.statOfRocovered)
+                                .padding(.trailing, 5)
+                        }
                     }
                     .padding(.vertical, 5)
                     

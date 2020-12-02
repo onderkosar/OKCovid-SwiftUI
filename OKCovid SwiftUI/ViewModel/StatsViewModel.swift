@@ -12,6 +12,7 @@ final class StatsViewModel: ObservableObject {
     @Published var countriesData: [CountryModel]    = []
     @Published var isLoading                        = true
     @Published var isShowingDetailView              = false
+    @Published var sortedBy                         = "name"
     
     var selectedCountry: CountryModel? {
         didSet {
@@ -19,7 +20,7 @@ final class StatsViewModel: ObservableObject {
         }
     }
     
-    let countries = ["usa", "uk", "ita", "fr", "esp", "deu", "tr", "bel", "can", "au", "bra"]
+    private let countries = ["usa", "uk", "ita", "fr", "esp", "deu", "tr", "can", "au", "bra"]
     
     func getTotalStatsData() {
         NetworkManager.shared.fetch(for: nil, ifDaily: false) { (result: WorldModel) in
@@ -44,7 +45,15 @@ final class StatsViewModel: ObservableObject {
     func getCountryListData() {
         NetworkManager.shared.fetch(for: "", ifDaily: false) { (result: [CountryModel]) in
             DispatchQueue.main.async {
-                self.countriesData = result
+                self.countriesData = result.sorted {
+                    if self.sortedBy == "cases" {
+                        return $0.cases > $1.cases
+                    } else if self.sortedBy == "deaths" {
+                        return $0.deaths > $1.deaths
+                    } else {
+                        return $1.countryName > $0.countryName
+                    }
+                }
             }
         }
     }

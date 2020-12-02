@@ -13,17 +13,10 @@ struct OKStatCard: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 6) {
-            Text(title)
-                .font(.system(.title, design: .serif))
-                .fontWeight(.bold)
-                .shadow(color: Color(.secondaryLabel), radius: 1, x: 0.7, y: 0.7)
-            
-            Text(subTitle)
-                .font(.system(.footnote, design: .serif))
-                .shadow(color: Color(.secondaryLabel), radius: 1, x: 0.7, y: 0.7)
+            OKTitleLabel(title: title, fontSize: 28, fontWeight: .bold)
+            OKTitleLabel(title: subTitle, fontSize: 13, fontWeight: .medium)
                 .lineLimit(2)
                 .multilineTextAlignment(.center)
-                .shadow(radius: 3)
         }
         .frame(width: 160, height: 80)
         .background(Color(.systemGray3))

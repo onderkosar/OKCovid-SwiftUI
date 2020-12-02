@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9504E3D52577F67100B63CEB /* OKTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9504E3D42577F67100B63CEB /* OKTitleLabel.swift */; };
 		950EA38D257182DC0047D0F0 /* OKXMarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA38C257182DC0047D0F0 /* OKXMarkButton.swift */; };
 		950EA39025718C0C0047D0F0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA38F25718C0C0047D0F0 /* MapViewModel.swift */; };
 		950FF1F52542E210002323FD /* WorldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FF1F42542E210002323FD /* WorldModel.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9504E3D42577F67100B63CEB /* OKTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKTitleLabel.swift; sourceTree = "<group>"; };
 		950EA38C257182DC0047D0F0 /* OKXMarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKXMarkButton.swift; sourceTree = "<group>"; };
 		950EA38F25718C0C0047D0F0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		950FF1F42542E210002323FD /* WorldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldModel.swift; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9504E3D32577F66200B63CEB /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				9504E3D42577F67100B63CEB /* OKTitleLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
 		950EA38B257182B20047D0F0 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +233,7 @@
 		95E36429257279ED0048B198 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				9504E3D32577F66200B63CEB /* Labels */,
 				950EA38B257182B20047D0F0 /* Buttons */,
 				956C2F0C2545FB63004BEC41 /* Items */,
 				956C2F162545FCA8004BEC41 /* Views */,
@@ -327,6 +338,7 @@
 				95ED4F4F2544A67D002C8D9D /* CountryListView.swift in Sources */,
 				9539BBA225588944001D00CC /* DailyStatsList.swift in Sources */,
 				95DBF9262565AF92007D73CE /* MockData.swift in Sources */,
+				9504E3D52577F67100B63CEB /* OKTitleLabel.swift in Sources */,
 				9539BB9D25587248001D00CC /* CountryInfoForm.swift in Sources */,
 				9511ACDD2571588B002B976D /* CountryDetailView.swift in Sources */,
 				950FF1F52542E210002323FD /* WorldModel.swift in Sources */,

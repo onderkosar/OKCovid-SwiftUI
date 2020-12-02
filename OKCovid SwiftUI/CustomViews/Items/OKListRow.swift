@@ -18,18 +18,12 @@ struct OKListRow: View {
     
     var body: some View {
         HStack {
-            Text(textOne)
-                .font(.system(size: fontSize, weight: fontWeight, design: .serif))
-                .shadow(color: .secondary, radius: 1, x: 0.7, y: 0.7)
+            OKTitleLabel(title: textOne, fontSize: fontSize, fontWeight: fontWeight)
                 .frame(width: frameWidth, alignment: .leading)
             Spacer()
-            Text(textTwo)
-                .font(.system(size: fontSize, weight: fontWeight, design: .serif))
-                .shadow(color: .secondary, radius: 1, x: 0.7, y: 0.7)
+            OKTitleLabel(title: textTwo, fontSize: fontSize, fontWeight: fontWeight)
                 .frame(width: (frameWidth-40), alignment: .trailing)
-            Text(textThree)
-                .font(.system(size: fontSize, weight: fontWeight, design: .serif))
-                .shadow(color: .secondary, radius: 1, x: 0.7, y: 0.7)
+            OKTitleLabel(title: textThree, fontSize: fontSize, fontWeight: fontWeight)
                 .frame(width: (frameWidth-40), alignment: .trailing)
         }
         .frame(height: (fontSize+1), alignment: .center)
