@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CountryCardView: View {
+struct CountryStatsCard: View {
     var countryData: CountryModel
 
     var body: some View {
@@ -61,9 +61,9 @@ struct CountryCardView: View {
     }
 }
 
-struct CountryCardView_Previews: PreviewProvider {
+struct CountryStatsCard_Previews: PreviewProvider {
     static var previews: some View {
-        CountryCardView(countryData: MockData.sampleCountryData)
+        CountryStatsCard(countryData: MockData.sampleCountryData)
             .previewLayout(.sizeThatFits)
             .colorScheme(.dark)
     }

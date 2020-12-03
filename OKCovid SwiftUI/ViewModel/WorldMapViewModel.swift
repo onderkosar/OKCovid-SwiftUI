@@ -8,7 +8,7 @@
 import SwiftUI
 import MapKit
 
-final class MapViewModel: ObservableObject {
+final class WorldMapViewModel: ObservableObject {
     
     @Published var region: MKCoordinateRegion = {
         var mapCoordinates  = CLLocationCoordinate2D(latitude: 55.000000, longitude: 15.0000000)

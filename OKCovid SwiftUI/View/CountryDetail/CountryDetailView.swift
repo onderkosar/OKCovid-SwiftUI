@@ -9,6 +9,8 @@ import SwiftUI
 import MapKit
 
 struct CountryDetailView: View {
+    @StateObject var viewModel  = CountryDetailViewModel()
+    
     @State var countryData: CountryModel
     @Binding var isShowingDetail: Bool
     
@@ -22,13 +24,17 @@ struct CountryDetailView: View {
                         .frame(height: 4)
                         .background(Color(.systemGray2))
                     
-                    InsetMapView(countryData: countryData, region: MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: countryData.countryInfo.lat ?? 48, longitude: countryData.countryInfo.long ?? 9), span: MKCoordinateSpan(latitudeDelta: 10.0, longitudeDelta: 10.0)))
+                    InsetMap(countryData: countryData, region: MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: countryData.countryInfo.lat ?? 48, longitude: countryData.countryInfo.long ?? 9), span: MKCoordinateSpan(latitudeDelta: 10.0, longitudeDelta: 10.0)))
                     
                     Divider()
                         .frame(height: 4)
                         .background(Color(.systemGray2))
                     
-                    DailyStatsList(country: countryData.country)
+                    DailyStatsList(dailyData: $viewModel.dailyData)
+                        .onAppear(perform: {
+                            UITableView.appearance().showsVerticalScrollIndicator = false
+                            viewModel.getDailyStatsData(for: countryData.country)
+                        })
                 }
             }
             .padding(0)

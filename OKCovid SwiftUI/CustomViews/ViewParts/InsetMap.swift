@@ -8,7 +8,7 @@
 import SwiftUI
 import MapKit
 
-struct InsetMapView: View {
+struct InsetMap: View {
     var countryData: CountryModel
     
     @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.8333, longitude: 12.8333), span: MKCoordinateSpan(latitudeDelta: 10.0, longitudeDelta: 10.0))
@@ -40,9 +40,9 @@ struct InsetMapView: View {
     }
 }
 
-struct InsetMapView_Previews: PreviewProvider {
+struct InsetMap_Previews: PreviewProvider {
     static var previews: some View {
-        InsetMapView(countryData: MockData.sampleCountryData)
+        InsetMap(countryData: MockData.sampleCountryData)
             .previewLayout(.sizeThatFits)
             .colorScheme(.dark)
     }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TotalStatsView: View {
-    @StateObject var viewModel = StatsViewModel()
+    @StateObject var viewModel = TotalStatsViewModel()
     
     var body: some View {
         VStack {
@@ -21,13 +21,13 @@ struct TotalStatsView: View {
                     .scaleEffect(1.5)
             } else {
                 Spacer()
-                HeaderView(worldData: viewModel.worldData ?? MockData.sampleWorldData)
+                WorldStatsCard(worldData: viewModel.worldData ?? MockData.sampleWorldData)
                     .frame(maxWidth: 500)
                 Spacer()
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .top, spacing: 15) {
                         ForEach(viewModel.countriesData, id: \.countryInfo._id) { country in
-                            CountryCardView(countryData: country)
+                            CountryStatsCard(countryData: country)
                                 .onTapGesture {
                                     viewModel.selectedCountry = country
                                 }
@@ -44,7 +44,7 @@ struct TotalStatsView: View {
     }
 }
 
-struct TotalStatsVC_Previews: PreviewProvider {
+struct TotalStatsView_Previews: PreviewProvider {
     static var previews: some View {
         TotalStatsView()
             .preferredColorScheme(.dark)

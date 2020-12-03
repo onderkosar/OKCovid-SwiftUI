@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct OKListRow: View {
-    @State var textOne: String
-    @State var textTwo: String
-    @State var textThree: String
+    var textOne: String
+    var textTwo: String
+    var textThree: String
     
-    @State var fontSize: CGFloat
-    @State var fontWeight: Font.Weight
-    @State var frameWidth: CGFloat
+    var fontSize: CGFloat
+    var fontWeight: Font.Weight
+    var frameWidth: CGFloat
     
     var body: some View {
         HStack {

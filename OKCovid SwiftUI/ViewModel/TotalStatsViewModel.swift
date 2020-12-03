@@ -7,12 +7,11 @@
 
 import SwiftUI
 
-final class StatsViewModel: ObservableObject {
+final class TotalStatsViewModel: ObservableObject {
     @Published var worldData: WorldModel?
     @Published var countriesData: [CountryModel]    = []
     @Published var isLoading                        = true
     @Published var isShowingDetailView              = false
-    @Published var sortedBy                         = "name"
     
     var selectedCountry: CountryModel? {
         didSet {
@@ -36,22 +35,6 @@ final class StatsViewModel: ObservableObject {
                     
                     if self.countriesData.count == self.countries.count {
                         self.isLoading = false
-                    }
-                }
-            }
-        }
-    }
-    
-    func getCountryListData() {
-        NetworkManager.shared.fetch(for: "", ifDaily: false) { (result: [CountryModel]) in
-            DispatchQueue.main.async {
-                self.countriesData = result.sorted {
-                    if self.sortedBy == "cases" {
-                        return $0.cases > $1.cases
-                    } else if self.sortedBy == "deaths" {
-                        return $0.deaths > $1.deaths
-                    } else {
-                        return $1.countryName > $0.countryName
                     }
                 }
             }

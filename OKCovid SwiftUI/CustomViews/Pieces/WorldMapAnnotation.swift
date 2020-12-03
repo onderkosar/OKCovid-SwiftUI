@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OKAnnotation: View {
+struct WorldMapAnnotation: View {
     @State private var animation: Double = 0.0
     
     let countryName: String
@@ -69,9 +69,9 @@ struct OKAnnotation: View {
     }
 }
 
-struct OKAnnotation_Previews: PreviewProvider {
+struct WorldMapAnnotation_Previews: PreviewProvider {
     static var previews: some View {
-        OKAnnotation(countryName: "usa", cases: 0, deaths: 0)
+        WorldMapAnnotation(countryName: "usa", cases: 0, deaths: 0)
             .colorScheme(.light)
             .previewLayout(.sizeThatFits)
     }

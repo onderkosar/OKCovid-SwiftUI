@@ -9,13 +9,13 @@ import SwiftUI
 import MapKit
 
 struct WorldMapView: View {
-    @StateObject var viewModel = MapViewModel()
+    @StateObject var viewModel = WorldMapViewModel()
     
     var body: some View {
         NavigationView {
             Map(coordinateRegion: $viewModel.region, annotationItems: viewModel.anotationsData, annotationContent: { country in
                 MapAnnotation(coordinate: country.location) {
-                    OKAnnotation(countryName: country.name.lowercased(), cases: country.cases, deaths: country.deaths)
+                    WorldMapAnnotation(countryName: country.name.lowercased(), cases: country.cases, deaths: country.deaths)
                 }
             })
             .onAppear(perform: {
@@ -28,7 +28,7 @@ struct WorldMapView: View {
     }
 }
 
-struct MapStatsVC_Previews: PreviewProvider {
+struct WorldMapView_Previews: PreviewProvider {
     static var previews: some View {
         WorldMapView()
     }

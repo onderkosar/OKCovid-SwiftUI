@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HeaderView: View {
+struct WorldStatsCard: View {
     var worldData: WorldModel
         
     var body: some View {
@@ -52,9 +52,9 @@ struct HeaderView: View {
     }
 }
 
-struct HeaderView_Previews: PreviewProvider {
+struct WorldStatsCard_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView(worldData: WorldModel(population: 0, cases: 0, active: 0, deaths: 0, recovered: 0))
+        WorldStatsCard(worldData: WorldModel(population: 0, cases: 0, active: 0, deaths: 0, recovered: 0))
             .previewLayout(.sizeThatFits)
             .preferredColorScheme(.dark)
     }
