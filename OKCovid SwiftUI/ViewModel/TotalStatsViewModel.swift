@@ -32,6 +32,7 @@ final class TotalStatsViewModel: ObservableObject {
             NetworkManager.shared.fetch(for: item, ifDaily: false) { (result: CountryModel) in
                 DispatchQueue.main.sync {
                     self.countriesData.append(result)
+                    self.countriesData.sort { $1.cases < $0.cases }
                     
                     if self.countriesData.count == self.countries.count {
                         self.isLoading = false

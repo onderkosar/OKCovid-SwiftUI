@@ -33,9 +33,8 @@ final class CountryDetailViewModel: ObservableObject {
             let date                = dateFormatter.date(from: key)
             dateDictionary[date!]   = value
         }
-        let sortedList = dateDictionary.sorted { $0.0 < $1.0 }
         
-        return sortedList
+        return dateDictionary.sorted { $0.0 < $1.0 }
     }
     
     func updateArray(with timelineData: TimelineData) {
